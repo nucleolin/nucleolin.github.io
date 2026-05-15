@@ -35,8 +35,7 @@ a:hover{text-decoration:underline}
 .layout{display:flex;min-height:100vh}
 .sidebar{width:200px;min-width:200px;background:var(--bg2);border-right:0.5px solid var(--bdr);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto}
 .sb-logo{padding:22px 18px 18px;border-bottom:0.5px solid var(--bdr)}
-.sn{font-size:13px;font-weight:600;color:var(--fg)}
-.sr{font-size:10px;color:var(--fg3);margin-top:2px}
+.sn{font-size:13px;font-weight:600;color:var(--fg)}.sr{font-size:10px;color:var(--fg3);margin-top:2px}
 .sb-nav{padding:14px 0;flex:1}
 .ng{padding:12px 18px 4px;font-size:9px;color:var(--fg3);letter-spacing:.1em;text-transform:uppercase}
 .na{display:block;padding:6px 18px;font-size:12px;color:var(--fg2);border-left:2px solid transparent;transition:all .15s;text-decoration:none}
@@ -51,7 +50,7 @@ a:hover{text-decoration:underline}
 .sbadge{font-size:10px;color:var(--acc);display:flex;align-items:center;gap:5px;cursor:pointer;user-select:none;position:relative}
 .sbadge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--acc);flex-shrink:0;animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-.opp-popup{display:none;position:absolute;bottom:calc(100% + 8px);left:0;width:210px;background:var(--bg2);border:0.5px solid var(--bdr2);border-radius:10px;padding:14px 16px;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,.35)}
+.opp-popup{display:none;position:absolute;bottom:calc(100% + 8px);left:0;width:216px;background:var(--bg2);border:0.5px solid var(--bdr2);border-radius:10px;padding:14px 16px;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,.35)}
 .opp-popup.open{display:block}
 .opp-popup::after{content:'';position:absolute;bottom:-5px;left:14px;width:8px;height:8px;background:var(--bg2);border-right:0.5px solid var(--bdr2);border-bottom:0.5px solid var(--bdr2);transform:rotate(45deg)}
 .opp-title{font-size:11px;font-weight:600;color:var(--fg);margin-bottom:8px}
@@ -64,9 +63,8 @@ a:hover{text-decoration:underline}
 .ptbar{padding:18px 32px;border-bottom:0.5px solid var(--bdr);background:var(--bg2);position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between}
 .pt-ey{font-size:10px;color:var(--fg3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
 .pt-h{font-size:22px;font-weight:600;color:var(--fg)}
-.pub-count{font-size:12px;color:var(--fg3)}
-.pub-count span{color:var(--fg);font-weight:500}
-.page{padding:32px;max-width:760px}
+.pub-count{font-size:12px;color:var(--fg3)}.pub-count span{color:var(--fg);font-weight:500}
+.page{padding:32px;max-width:800px}
 .fi{opacity:0;transform:translateY(12px);transition:opacity .5s,transform .5s}
 .fi.vis{opacity:1;transform:translateY(0)}
 .filters{margin-bottom:28px;display:flex;flex-direction:column;gap:8px}
@@ -83,12 +81,12 @@ a:hover{text-decoration:underline}
 .pr{display:flex;align-items:flex-start;gap:14px;padding:11px 6px;border-bottom:0.5px solid var(--bdr);border-radius:6px;transition:background .15s;margin:0 -6px}
 .pr:last-child{border-bottom:none}
 .pr:hover{background:rgba(255,255,255,0.025)}
-.pr-venue{font-size:10px;font-weight:600;color:var(--fg3);min-width:68px;flex-shrink:0;padding-top:3px;line-height:1.3;text-align:right}
+.pr-venue{font-size:10px;font-weight:600;color:var(--fg3);min-width:72px;flex-shrink:0;padding-top:3px;line-height:1.3;text-align:right}
 .pr-body{flex:1;min-width:0}
 .pr-title{font-size:13px;color:var(--fg);line-height:1.5;font-weight:500;margin-bottom:3px}
 .pr-authors{font-size:11px;color:var(--fg3);margin-bottom:7px}
 .pr-authors strong{color:var(--fg2)}
-.pr-meta{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.pr-meta{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-bottom:6px}
 .tag{font-size:9px;padding:2px 7px;border-radius:3px;font-weight:500}
 .tag-hci{background:var(--tag-hci-bg);color:var(--tag-hci-fg)}
 .tag-neuro{background:var(--tag-neuro-bg);color:var(--tag-neuro-fg)}
@@ -99,23 +97,23 @@ a:hover{text-decoration:underline}
 .tb-lbw{background:rgba(106,164,200,0.1);color:var(--blue);border:0.5px solid rgba(106,164,200,0.2)}
 .tb-workshop{background:rgba(157,143,232,0.1);color:var(--violet);border:0.5px solid rgba(157,143,232,0.2)}
 .tb-journal{background:rgba(107,196,106,0.1);color:#6bc46a;border:0.5px solid rgba(107,196,106,0.2)}
+.tb-poster{background:rgba(106,164,200,0.08);color:var(--blue);border:0.5px solid rgba(106,164,200,0.15)}
 .tb-first{font-size:9px;padding:2px 7px;border-radius:3px;background:rgba(212,146,74,0.07);color:var(--acc)}
-.pdf-btn{font-size:10px;padding:3px 10px;border-radius:4px;background:rgba(200,60,60,0.1);color:#c84040;border:0.5px solid rgba(200,60,60,0.25);text-decoration:none;white-space:nowrap;flex-shrink:0;margin-top:2px;transition:background .15s}
-.pdf-btn:hover{background:rgba(200,60,60,0.2);text-decoration:none}
-.pr-links{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}
+.pr-links{display:flex;gap:5px;flex-wrap:wrap}
 .pl{font-size:10px;padding:2px 8px;border-radius:4px;text-decoration:none;border:0.5px solid;transition:opacity .15s;white-space:nowrap}
-.pl:hover{opacity:.75;text-decoration:none}
+.pl:hover{opacity:.72;text-decoration:none}
 .pl-pdf{background:rgba(200,60,60,0.1);color:#c84040;border-color:rgba(200,60,60,0.3)}
 .pl-doi{background:rgba(106,164,200,0.1);color:var(--blue);border-color:rgba(106,164,200,0.3)}
 .pl-page{background:rgba(212,146,74,0.1);color:var(--acc);border-color:rgba(212,146,74,0.3)}
 .pl-slides{background:rgba(157,143,232,0.1);color:var(--violet);border-color:rgba(157,143,232,0.3)}
 .no-results{text-align:center;padding:60px 0;color:var(--fg3);font-size:13px}
+.accept-rate{font-size:9px;color:var(--fg3);padding:2px 6px;border-radius:3px;background:rgba(255,255,255,0.04);border:0.5px solid var(--bdr)}
 </style>
 </head>
 <body>
 <div class="layout">
 <nav class="sidebar">
-  <div class="sb-logo"><div class="sn">Yang Chen Lin</div><div class="sr">Neuro · AI Design</div></div>
+  <div class="sb-logo"><div class="sn">Yang Chen Lin</div><div class="sr">HCI · Neuro · AI</div></div>
   <div class="sb-nav">
     <div class="ng">Pages</div>
     <a class="na" href="about.html">About</a>
@@ -129,11 +127,11 @@ a:hover{text-decoration:underline}
     <div class="sbadge" onclick="toggleOpp(event)" role="button" tabindex="0">
       <div class="opp-popup" id="opp-popup">
         <div class="opp-title">Open to opportunities</div>
+        <div class="opp-item"><span class="opp-dot"></span>Direct-entry PhD (Sep. 2026)</div>
         <div class="opp-item"><span class="opp-dot"></span>Research internship / RA</div>
-        <div class="opp-item"><span class="opp-dot"></span>PhD programme (2026–27)</div>
         <div class="opp-item"><span class="opp-dot"></span>Research collaboration</div>
         <div class="opp-item"><span class="opp-dot"></span>Talk / seminar invitation</div>
-        <a class="opp-cta" href="mailto:your@email.com">Get in touch →</a>
+        <a class="opp-cta" href="mailto:yangchenlin@gapp.nthu.edu.tw">Get in touch →</a>
       </div>
       Open to opportunities
     </div>
@@ -142,8 +140,8 @@ a:hover{text-decoration:underline}
 
 <main class="main">
   <div class="ptbar">
-    <div><div class="pt-ey">HCI · Neuroimaging · Conversational AI · NeuroAI</div><h1 class="pt-h">Publications</h1></div>
-    <div class="pub-count">Showing <span id="shown">7</span> of 7</div>
+    <div><div class="pt-ey">Journal · Conference · Poster · Work in Progress</div><h1 class="pt-h">Publications</h1></div>
+    <div class="pub-count">Showing <span id="shown">12</span> of 12</div>
   </div>
 
   <div class="page fi">
@@ -152,9 +150,9 @@ a:hover{text-decoration:underline}
         <span class="fl">Type</span>
         <button class="fb on" data-f="type" data-v="all" onclick="doFilter(this)">All</button>
         <button class="fb nb" data-f="type" data-v="conf" onclick="doFilter(this)">Conference</button>
-        <button class="fb nb" data-f="type" data-v="lbw" onclick="doFilter(this)">LBW</button>
-        <button class="fb nb" data-f="type" data-v="workshop" onclick="doFilter(this)">Workshop</button>
         <button class="fb nb" data-f="type" data-v="journal" onclick="doFilter(this)">Journal</button>
+        <button class="fb nb" data-f="type" data-v="poster" onclick="doFilter(this)">Poster</button>
+        <button class="fb nb" data-f="type" data-v="wip" onclick="doFilter(this)">Work in Progress</button>
       </div>
       <div class="filter-row">
         <span class="fl">Topic</span>
@@ -170,91 +168,244 @@ a:hover{text-decoration:underline}
     </div>
 
     <div id="pub-list">
+
+      <!-- 2026 -->
       <div class="yg" data-year="2026">
         <div class="yg-label">2026</div>
+
         <div class="pr" data-type="conf" data-topics="hci" data-role="first">
           <div class="pr-venue">CHI '26</div>
           <div class="pr-body">
-            <div class="pr-title">Evidence-Based Design Tools for Human–AI Co-Creation in Architectural Space</div>
-            <div class="pr-authors"><strong>Yang Chen Lin</strong>, Po-Chih Kuo</div>
-            <div class="pr-meta"><span class="tag tag-hci">HCI & Design</span><span class="tbadge tb-conf">Conference</span><span class="tb-first">★ First author</span></div>
+            <div class="pr-title">AIDED: Augmenting Interior Design with Human Experience Data for Designer–AI Co-Design</div>
+            <div class="pr-authors"><strong>Lin, Y.C.</strong>, Chien, C.-Y., Hou, K.-H., Chen, H.-Y., & Kuo, P.-C.</div>
+            <div class="pr-meta">
+              <span class="tag tag-hci">HCI & Design</span>
+              <span class="tbadge tb-conf">Conference</span>
+              <span class="tb-first">★ First author</span>
+              <span class="accept-rate">25.3% acceptance · Barcelona</span>
+            </div>
+            <div class="pr-links">
+              <a class="pl pl-pdf" href="https://dl.acm.org/doi/full/10.1145/3772318.3791378" target="_blank" rel="noopener">PDF</a>
+              <a class="pl pl-doi" href="https://dl.acm.org/doi/full/10.1145/3772318.3791378" target="_blank" rel="noopener">DOI</a>
+            </div>
           </div>
-          <div class="pr-links"><a class="pl pl-pdf" href="#">PDF</a><a class="pl pl-doi" href="#">DOI</a><a class="pl pl-page" href="#">Project page</a><a class="pl pl-slides" href="#">Slides</a></div>
         </div>
-        <div class="pr" data-type="conf" data-topics="ai" data-role="first">
+
+        <div class="pr" data-type="conf" data-topics="ai" data-role="">
           <div class="pr-venue">CHI '26</div>
           <div class="pr-body">
-            <div class="pr-title">Distance-Aware Prompting: Adapting LLM Responses to Psychological Distance of Queries</div>
-            <div class="pr-authors"><strong>Yang Chen Lin</strong>, Yi-Chieh Lee</div>
-            <div class="pr-meta"><span class="tag tag-ai">Conversational AI</span><span class="tbadge tb-conf">Conference</span><span class="tb-first">★ First author</span></div>
+            <div class="pr-title">Fit Matters: Format-Distance Alignment Improves Conversational Search</div>
+            <div class="pr-authors">Yang, Y., Tan, Y., King, J. T., <strong>Lin, Y.C.</strong> & Lee, Y. C.</div>
+            <div class="pr-meta">
+              <span class="tag tag-ai">Conversational AI</span>
+              <span class="tbadge tb-conf">Conference</span>
+              <span class="accept-rate">25.3% acceptance · Barcelona</span>
+            </div>
+            <div class="pr-links">
+              <a class="pl pl-pdf" href="https://dl.acm.org/doi/full/10.1145/3772318.3790317" target="_blank" rel="noopener">PDF</a>
+              <a class="pl pl-doi" href="https://dl.acm.org/doi/full/10.1145/3772318.3790317" target="_blank" rel="noopener">DOI</a>
+            </div>
           </div>
-          <div class="pr-links"><a class="pl pl-pdf" href="#">PDF</a><a class="pl pl-doi" href="#">DOI</a><a class="pl pl-page" href="#">Project page</a><a class="pl pl-slides" href="#">Slides</a></div>
         </div>
-        <div class="pr" data-type="workshop" data-topics="neuroai" data-role="first">
+
+        <div class="pr" data-type="conf" data-topics="neuroai" data-role="first">
           <div class="pr-venue">AAAI '26</div>
           <div class="pr-body">
-            <div class="pr-title">Shortcut Learning Through a NeuroAI Lens: Hippocampal Cognitive Maps as Inductive Bias</div>
-            <div class="pr-authors"><strong>Yang Chen Lin</strong></div>
-            <div class="pr-meta"><span class="tag tag-neuroai">NeuroAI</span><span class="tbadge tb-workshop">Workshop</span><span class="tb-first">★ First author</span></div>
+            <div class="pr-title">Play the (Mis)Match: fMRI-Aligned Feature Fine-Tuning to Reveal Shortcut Bias in DNNs</div>
+            <div class="pr-authors"><strong>Lin, Y.C.</strong>, Lee, C.Y., & Kuo, P.-C.</div>
+            <div class="pr-meta">
+              <span class="tag tag-neuroai">NeuroAI</span>
+              <span class="tbadge tb-workshop">Workshop</span>
+              <span class="tb-first">★ First author</span>
+              <span class="accept-rate">10/77 accepted · Singapore</span>
+            </div>
+            <div class="pr-links">
+              <a class="pl pl-pdf" href="https://www.researchgate.net/publication/400058661_Play_the_MisMatch_Using_fMRI-Aligned_Feature_Fine-Tuning_to_Reveal_Shortcut_Bias_in_Deep_Neural_Networks" target="_blank" rel="noopener">PDF</a>
+            </div>
           </div>
-          <div class="pr-links"><a class="pl pl-pdf" href="#">PDF</a><a class="pl pl-doi" href="#">DOI</a><a class="pl pl-page" href="#">Project page</a><a class="pl pl-slides" href="#">Slides</a></div>
         </div>
       </div>
 
+      <!-- 2025 -->
       <div class="yg" data-year="2025">
         <div class="yg-label">2025</div>
-        <div class="pr" data-type="conf" data-topics="ai" data-role="first">
+
+        <div class="pr" data-type="conf" data-topics="hci" data-role="first">
+          <div class="pr-venue">CHI '25 EA</div>
+          <div class="pr-body">
+            <div class="pr-title">Shaping Architectural Design Tools Through HCI</div>
+            <div class="pr-authors"><strong>Lin, Y.C.</strong>, Chung, W.-Y., Chien, C.-Y., Su, C.-H., & Kuo, P.C.</div>
+            <div class="pr-meta">
+              <span class="tag tag-hci">HCI & Design</span>
+              <span class="tbadge tb-lbw">LBW</span>
+              <span class="tb-first">★ First author</span>
+              <span class="accept-rate">32.8% acceptance · Yokohama</span>
+            </div>
+            <div class="pr-links">
+              <a class="pl pl-pdf" href="https://dl.acm.org/doi/full/10.1145/3706599.3719720" target="_blank" rel="noopener">PDF</a>
+              <a class="pl pl-doi" href="https://dl.acm.org/doi/full/10.1145/3706599.3719720" target="_blank" rel="noopener">DOI</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pr" data-type="conf" data-topics="ai" data-role="">
           <div class="pr-venue">CHI '25</div>
           <div class="pr-body">
-            <div class="pr-title">Navigating Information Needs in Conversational AI via Psychological Distance</div>
-            <div class="pr-authors"><strong>Yang Chen Lin</strong>, Yi-Chieh Lee</div>
-            <div class="pr-meta"><span class="tag tag-ai">Conversational AI</span><span class="tbadge tb-conf">Conference</span><span class="tb-first">★ First author</span></div>
+            <div class="pr-title">Psychological Distance in Conversational vs. Web Search</div>
+            <div class="pr-authors">Yang, Y., Tan, Y., <strong>Lin, Y.C.</strong>, King, J., Liu, Z., & Lee, Y.</div>
+            <div class="pr-meta">
+              <span class="tag tag-ai">Conversational AI</span>
+              <span class="tbadge tb-conf">Conference</span>
+              <span class="accept-rate">24.9% acceptance · Yokohama</span>
+            </div>
+            <div class="pr-links">
+              <a class="pl pl-pdf" href="https://dl.acm.org/doi/full/10.1145/3706598.3713770" target="_blank" rel="noopener">PDF</a>
+              <a class="pl pl-doi" href="https://dl.acm.org/doi/full/10.1145/3706598.3713770" target="_blank" rel="noopener">DOI</a>
+            </div>
           </div>
-          <div class="pr-links"><a class="pl pl-pdf" href="https://doi.org/10.1145/XXXXXXX" target="_blank" rel="noopener">PDF</a><a class="pl pl-doi" href="https://doi.org/10.1145/XXXXXXX" target="_blank" rel="noopener">DOI</a><a class="pl pl-page" href="#">Project page</a><a class="pl pl-slides" href="#">Slides</a></div>
         </div>
-        <div class="pr" data-type="lbw" data-topics="hci neuro" data-role="first">
-          <div class="pr-venue">CHI '25 LBW</div>
+
+        <div class="pr" data-type="poster" data-topics="neuro hci" data-role="first">
+          <div class="pr-venue">ANFA '25</div>
           <div class="pr-body">
-            <div class="pr-title">Eye-Tracking as a Feedback Medium in Architectural Design Workflows: A Pilot Study</div>
-            <div class="pr-authors"><strong>Yang Chen Lin</strong>, Po-Chih Kuo</div>
-            <div class="pr-meta"><span class="tag tag-hci">HCI & Design</span><span class="tag tag-neuro">Neuroimaging</span><span class="tbadge tb-lbw">LBW</span><span class="tb-first">★ First author</span></div>
+            <div class="pr-title">Distinct Functional Connectivity Attenuations in Residential Interior Styles</div>
+            <div class="pr-authors"><strong>Lin, Y.C.</strong>, Chung, W.Y., & Kuo, P.-C.</div>
+            <div class="pr-meta">
+              <span class="tag tag-neuro">Neuroimaging</span>
+              <span class="tag tag-hci">HCI & Design</span>
+              <span class="tbadge tb-poster">Poster</span>
+              <span class="tb-first">★ First author</span>
+              <span class="accept-rate">Salk Institute, San Diego</span>
+            </div>
           </div>
-          <div class="pr-links"><a class="pl pl-pdf" href="https://doi.org/10.1145/XXXXXXX" target="_blank" rel="noopener">PDF</a><a class="pl pl-doi" href="https://doi.org/10.1145/XXXXXXX" target="_blank" rel="noopener">DOI</a><a class="pl pl-page" href="#">Project page</a><a class="pl pl-slides" href="#">Slides</a></div>
-        </div>
-        <div class="pr" data-type="journal" data-topics="neuro" data-role="">
-          <div class="pr-venue">NeuroImage</div>
-          <div class="pr-body">
-            <div class="pr-title">Scene-Selective Cortical Responses to Architectural and Natural Environments: A Multi-Site fMRI Study</div>
-            <div class="pr-authors">Chih-Mao Huang, <strong>Yang Chen Lin</strong>, [co-authors]</div>
-            <div class="pr-meta"><span class="tag tag-neuro">Neuroimaging</span><span class="tbadge tb-journal">Journal</span></div>
-          </div>
-          <div class="pr-links"><a class="pl pl-pdf" href="#">PDF</a><a class="pl pl-doi" href="#">DOI</a><a class="pl pl-page" href="#">Project page</a><a class="pl pl-slides" href="#">Slides</a></div>
-        </div>
-        <div class="pr" data-type="workshop" data-topics="ai" data-role="">
-          <div class="pr-venue">CSCW '25</div>
-          <div class="pr-body">
-            <div class="pr-title">ThreadRank: Structural Predictors of Viral Engagement in Threaded Social Platforms</div>
-            <div class="pr-authors">[co-authors], <strong>Yang Chen Lin</strong></div>
-            <div class="pr-meta"><span class="tag tag-ai">Conversational AI</span><span class="tbadge tb-workshop">Workshop</span></div>
-          </div>
-          <div class="pr-links"><a class="pl pl-pdf" href="#">PDF</a><a class="pl pl-doi" href="#">DOI</a><a class="pl pl-page" href="#">Project page</a><a class="pl pl-slides" href="#">Slides</a></div>
         </div>
       </div>
+
+      <!-- 2024 -->
+      <div class="yg" data-year="2024">
+        <div class="yg-label">2024</div>
+
+        <div class="pr" data-type="journal" data-topics="hci" data-role="first">
+          <div class="pr-venue">IJHCS</div>
+          <div class="pr-body">
+            <div class="pr-title">Representing Scents: An Evaluation Framework of Scent-related Experiences</div>
+            <div class="pr-authors"><strong>Lin, Y.C.</strong>, Yu, S. L., Zhuang, A. Y., Lee, C., … & Kuo, P. C.</div>
+            <div class="pr-meta">
+              <span class="tag tag-hci">HCI & Design</span>
+              <span class="tbadge tb-journal">Journal</span>
+              <span class="tb-first">★ First author</span>
+              <span class="accept-rate">Int'l Journal of Human-Computer Studies, 103357</span>
+            </div>
+            <div class="pr-links">
+              <a class="pl pl-pdf" href="https://www.sciencedirect.com/science/article/abs/pii/S107158192400140X" target="_blank" rel="noopener">PDF</a>
+              <a class="pl pl-doi" href="https://www.sciencedirect.com/science/article/abs/pii/S107158192400140X" target="_blank" rel="noopener">DOI</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pr" data-type="conf" data-topics="hci neuro" data-role="">
+          <div class="pr-venue">EMBC '24</div>
+          <div class="pr-body">
+            <div class="pr-title">Deciphering Odor Perception Through EEG and Gas Sensors</div>
+            <div class="pr-authors">Peng, H.-P., Hsiao, H.-L., Su, C.-H., <strong>Lin, Y.C.</strong> & Kuo, P. C.</div>
+            <div class="pr-meta">
+              <span class="tag tag-neuro">Neuroimaging</span>
+              <span class="tag tag-hci">HCI & Design</span>
+              <span class="tbadge tb-conf">Conference</span>
+              <span class="accept-rate">IEEE EMBC 2024 · Orlando</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2021 -->
+      <div class="yg" data-year="2021">
+        <div class="yg-label">2021</div>
+
+        <div class="pr" data-type="conf" data-topics="hci" data-role="">
+          <div class="pr-venue">ICHMS '21</div>
+          <div class="pr-body">
+            <div class="pr-title">A Brain-Sensing Fragrance Diffuser for Mental State Regulation</div>
+            <div class="pr-authors">Zhuang, A. Y., <strong>Lin, Y.C.</strong>, Yu, S. L., & Kuo, P. C.</div>
+            <div class="pr-meta">
+              <span class="tag tag-hci">HCI & Design</span>
+              <span class="tag tag-neuro">Neuroimaging</span>
+              <span class="tbadge tb-conf">Conference</span>
+              <span class="accept-rate">IEEE ICHMS 2021</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pr" data-type="poster" data-topics="neuro" data-role="first">
+          <div class="pr-venue">SfN '21</div>
+          <div class="pr-body">
+            <div class="pr-title">Neural Basis of Sign Language Proficiency via Naturalistic fMRI and ISC</div>
+            <div class="pr-authors"><strong>Lin, Y.C.</strong>, Chiu, Y. S., & Kuo, W. J.</div>
+            <div class="pr-meta">
+              <span class="tag tag-neuro">Neuroimaging</span>
+              <span class="tbadge tb-poster">Poster</span>
+              <span class="tb-first">★ First author</span>
+              <span class="accept-rate">SfN 2021 · San Diego</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2020 & earlier -->
+      <div class="yg" data-year="2020">
+        <div class="yg-label">2020 & earlier</div>
+
+        <div class="pr" data-type="poster" data-topics="neuro hci" data-role="first">
+          <div class="pr-venue">ANFA '20</div>
+          <div class="pr-body">
+            <div class="pr-title">Socio-cultural Differences in Neural Underpinnings of Perceiving Built Environments</div>
+            <div class="pr-authors"><strong>Lin, Y.C.</strong> & Huang, C. M.</div>
+            <div class="pr-meta">
+              <span class="tag tag-neuro">Neuroimaging</span>
+              <span class="tag tag-hci">HCI & Design</span>
+              <span class="tbadge tb-poster">Poster</span>
+              <span class="tb-first">★ First author</span>
+              <span class="accept-rate">ANFA 2020 · Virtual</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pr" data-type="poster" data-topics="neuro" data-role="first">
+          <div class="pr-venue">CNS '19</div>
+          <div class="pr-body">
+            <div class="pr-title">Social Values Modulate Neural Correlates of Moral Decision Making</div>
+            <div class="pr-authors"><strong>Lin, Y.C.</strong>, Doole, R., Huang, H. W., & Huang, C. M.</div>
+            <div class="pr-meta">
+              <span class="tag tag-neuro">Neuroimaging</span>
+              <span class="tbadge tb-poster">Poster</span>
+              <span class="tb-first">★ First author</span>
+              <span class="accept-rate">CNS 2019 · San Francisco</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pr" data-type="wip" data-topics="neuro" data-role="first">
+          <div class="pr-venue">Under Review</div>
+          <div class="pr-body">
+            <div class="pr-title">Cross-Cultural Social Values Modulate Neural Correlates of Moral Decision-Making</div>
+            <div class="pr-authors"><strong>Lin, Y.C.</strong>, Li, Y. S., Huang, H. W., Fan, Y. T., Doole, R., Wu C. W., Tzeng, O. J. L., Cheng, Y., & Huang, C. M.</div>
+            <div class="pr-meta">
+              <span class="tag tag-neuro">Neuroimaging</span>
+              <span class="tbadge" style="background:rgba(212,146,74,0.1);color:var(--acc);border:0.5px solid rgba(212,146,74,0.2)">Under Review</span>
+              <span class="tb-first">★ First author</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
     <div class="no-results" id="no-results" style="display:none">No papers match the selected filters.</div>
   </div>
 </main>
 </div>
 <script>
-function toggleOpp(e){
-  e.stopPropagation();
-  const p=document.getElementById('opp-popup');
-  if(p) p.classList.toggle('open');
-}
-document.addEventListener('click',function(){
-  const p=document.getElementById('opp-popup');
-  if(p) p.classList.remove('open');
-});
+function toggleOpp(e){e.stopPropagation();const p=document.getElementById('opp-popup');if(p)p.classList.toggle('open');}
+document.addEventListener('click',function(){const p=document.getElementById('opp-popup');if(p)p.classList.remove('open');});
 (function(){const s=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',s);const l=document.getElementById('tlbl');if(l)l.textContent=s==='light'?'Dark Mode':'Light Mode';})();
 function toggleTheme(){const c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('theme',n);document.getElementById('tlbl').textContent=n==='light'?'Dark Mode':'Light Mode';}
 const st={type:'all',topics:new Set(),role:''};
