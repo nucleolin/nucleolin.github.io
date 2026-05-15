@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications · Yang Chen Lin</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<style>
+:root{
+  --bg:#1a1714;--bg2:#232018;--bg3:#2c2820;
+  --fg:#ede8e0;--fg2:#a89e90;--fg3:#665e52;
+  --acc:#d4924a;--amb:#6aa4c8;--blue:#6aa4c8;--violet:#9d8fe8;
+  --bdr:rgba(255,255,255,0.08);--bdr2:rgba(255,255,255,0.14);
+  --tag-hci-bg:#1e2e1a;--tag-hci-fg:#6bc46a;
+  --tag-neuro-bg:#221840;--tag-neuro-fg:#9d8fe8;
+  --tag-ai-bg:#122040;--tag-ai-fg:#6aa4c8;
+  --tag-neuroai-bg:#2e1e08;--tag-neuroai-fg:#d4924a;
+}
+[data-theme="light"]{
+  --bg:#f5f2ec;--bg2:#fdfbf7;--bg3:#ede9e0;
+  --fg:#1c1814;--fg2:#5a5048;--fg3:#9a9088;
+  --acc:#a0640a;--amb:#2a6a94;--blue:#2a6a94;--violet:#5a4ab0;
+  --bdr:rgba(0,0,0,0.07);--bdr2:rgba(0,0,0,0.12);
+  --tag-hci-bg:#cceacc;--tag-hci-fg:#0a5c0a;
+  --tag-neuro-bg:#ddd6f8;--tag-neuro-fg:#3a2a88;
+  --tag-ai-bg:#cce0f4;--tag-ai-fg:#0a3a7a;
+  --tag-neuroai-bg:#f5e0c8;--tag-neuroai-fg:#6a3e00;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--fg);font-size:14px;line-height:1.65;transition:background .25s,color .25s}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+.layout{display:flex;min-height:100vh}
+.sidebar{width:200px;min-width:200px;background:var(--bg2);border-right:0.5px solid var(--bdr);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto}
+.sb-logo{padding:22px 18px 18px;border-bottom:0.5px solid var(--bdr)}
+.sn{font-size:13px;font-weight:600;color:var(--fg)}
+.sr{font-size:10px;color:var(--fg3);margin-top:2px}
+.sb-nav{padding:14px 0;flex:1}
+.ng{padding:12px 18px 4px;font-size:9px;color:var(--fg3);letter-spacing:.1em;text-transform:uppercase}
+.na{display:block;padding:6px 18px;font-size:12px;color:var(--fg2);border-left:2px solid transparent;transition:all .15s;text-decoration:none}
+.na:hover{color:var(--fg);background:rgba(212,146,74,0.04);text-decoration:none}
+.na.cur{color:var(--acc);border-left-color:var(--acc);background:rgba(212,146,74,0.07);font-weight:500}
+.sb-foot{padding:14px 18px;border-top:0.5px solid var(--bdr);display:flex;flex-direction:column;gap:10px}
+.ttog{background:none;border:0.5px solid var(--bdr2);border-radius:20px;padding:5px 10px;cursor:pointer;display:flex;align-items:center;gap:6px;color:var(--fg3);font-size:11px;transition:border-color .2s}
+.ttog:hover{border-color:var(--acc);color:var(--fg2)}
+.tpill{width:26px;height:14px;background:var(--bg3);border-radius:7px;position:relative}
+.tpill::after{content:'';position:absolute;top:2px;left:2px;width:10px;height:10px;border-radius:50%;background:var(--acc);transition:transform .2s}
+[data-theme="light"] .tpill::after{transform:translateX(12px)}
+.sbadge{font-size:10px;color:var(--acc);display:flex;align-items:center;gap:5px;cursor:pointer;user-select:none;position:relative}
+.sbadge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--acc);flex-shrink:0;animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.opp-popup{display:none;position:absolute;bottom:calc(100% + 8px);left:0;width:210px;background:var(--bg2);border:0.5px solid var(--bdr2);border-radius:10px;padding:14px 16px;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,.35)}
+.opp-popup.open{display:block}
+.opp-popup::after{content:'';position:absolute;bottom:-5px;left:14px;width:8px;height:8px;background:var(--bg2);border-right:0.5px solid var(--bdr2);border-bottom:0.5px solid var(--bdr2);transform:rotate(45deg)}
+.opp-title{font-size:11px;font-weight:600;color:var(--fg);margin-bottom:8px}
+.opp-item{font-size:11px;color:var(--fg2);padding:4px 0;border-bottom:0.5px solid var(--bdr);display:flex;align-items:center;gap:7px;line-height:1.4}
+.opp-item:last-child{border-bottom:none;padding-bottom:0}
+.opp-dot{width:5px;height:5px;border-radius:50%;background:var(--acc);flex-shrink:0}
+.opp-cta{margin-top:10px;display:block;font-size:10px;color:var(--acc);text-align:center;padding:5px;border:0.5px solid rgba(212,146,74,0.3);border-radius:6px;text-decoration:none;transition:background .15s}
+.opp-cta:hover{background:rgba(212,146,74,0.1);text-decoration:none}
+.main{flex:1;min-width:0}
+.ptbar{padding:18px 32px;border-bottom:0.5px solid var(--bdr);background:var(--bg2);position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between}
+.pt-ey{font-size:10px;color:var(--fg3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+.pt-h{font-size:22px;font-weight:600;color:var(--fg)}
+.pub-count{font-size:12px;color:var(--fg3)}
+.pub-count span{color:var(--fg);font-weight:500}
+.page{padding:32px;max-width:760px}
+.fi{opacity:0;transform:translateY(12px);transition:opacity .5s,transform .5s}
+.fi.vis{opacity:1;transform:translateY(0)}
+.filters{margin-bottom:28px;display:flex;flex-direction:column;gap:8px}
+.filter-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.fl{font-size:10px;color:var(--fg3);letter-spacing:.08em;text-transform:uppercase;min-width:48px;flex-shrink:0}
+.fb{font-size:11px;padding:3px 11px;border-radius:20px;border:0.5px solid var(--bdr2);background:none;color:var(--fg3);cursor:pointer;transition:all .15s}
+.fb:hover{border-color:var(--acc);color:var(--fg2)}
+.fb.on{border-color:var(--acc);color:var(--acc);background:rgba(212,146,74,0.1)}
+.fb.nb.on{border-color:var(--blue);color:var(--blue);background:rgba(106,164,200,0.1)}
+.fb.rb.on{border-color:var(--violet);color:var(--violet);background:rgba(157,143,232,0.1)}
+.yg{margin-bottom:28px}
+.yg-label{font-size:11px;font-weight:600;color:var(--fg3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.yg-label::after{content:'';flex:1;height:0.5px;background:var(--bdr)}
+.pr{display:flex;align-items:flex-start;gap:14px;padding:11px 6px;border-bottom:0.5px solid var(--bdr);border-radius:6px;transition:background .15s;margin:0 -6px}
+.pr:last-child{border-bottom:none}
+.pr:hover{background:rgba(255,255,255,0.025)}
+.pr-venue{font-size:10px;font-weight:600;color:var(--fg3);min-width:68px;flex-shrink:0;padding-top:3px;line-height:1.3;text-align:right}
+.pr-body{flex:1;min-width:0}
+.pr-title{font-size:13px;color:var(--fg);line-height:1.5;font-weight:500;margin-bottom:3px}
+.pr-authors{font-size:11px;color:var(--fg3);margin-bottom:7px}
+.pr-authors strong{color:var(--fg2)}
+.pr-meta{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.tag{font-size:9px;padding:2px 7px;border-radius:3px;font-weight:500}
+.tag-hci{background:var(--tag-hci-bg);color:var(--tag-hci-fg)}
+.tag-neuro{background:var(--tag-neuro-bg);color:var(--tag-neuro-fg)}
+.tag-ai{background:var(--tag-ai-bg);color:var(--tag-ai-fg)}
+.tag-neuroai{background:var(--tag-neuroai-bg);color:var(--tag-neuroai-fg)}
+.tbadge{font-size:9px;padding:2px 7px;border-radius:3px;font-weight:500}
+.tb-conf{background:rgba(212,146,74,0.1);color:var(--acc);border:0.5px solid rgba(212,146,74,0.2)}
+.tb-lbw{background:rgba(106,164,200,0.1);color:var(--blue);border:0.5px solid rgba(106,164,200,0.2)}
+.tb-workshop{background:rgba(157,143,232,0.1);color:var(--violet);border:0.5px solid rgba(157,143,232,0.2)}
+.tb-journal{background:rgba(107,196,106,0.1);color:#6bc46a;border:0.5px solid rgba(107,196,106,0.2)}
+.tb-first{font-size:9px;padding:2px 7px;border-radius:3px;background:rgba(212,146,74,0.07);color:var(--acc)}
+.pdf-btn{font-size:10px;padding:3px 10px;border-radius:4px;background:rgba(200,60,60,0.1);color:#c84040;border:0.5px solid rgba(200,60,60,0.25);text-decoration:none;white-space:nowrap;flex-shrink:0;margin-top:2px;transition:background .15s}
+.pdf-btn:hover{background:rgba(200,60,60,0.2);text-decoration:none}
+.pr-links{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}
+.pl{font-size:10px;padding:2px 8px;border-radius:4px;text-decoration:none;border:0.5px solid;transition:opacity .15s;white-space:nowrap}
+.pl:hover{opacity:.75;text-decoration:none}
+.pl-pdf{background:rgba(200,60,60,0.1);color:#c84040;border-color:rgba(200,60,60,0.3)}
+.pl-doi{background:rgba(106,164,200,0.1);color:var(--blue);border-color:rgba(106,164,200,0.3)}
+.pl-page{background:rgba(212,146,74,0.1);color:var(--acc);border-color:rgba(212,146,74,0.3)}
+.pl-slides{background:rgba(157,143,232,0.1);color:var(--violet);border-color:rgba(157,143,232,0.3)}
+.no-results{text-align:center;padding:60px 0;color:var(--fg3);font-size:13px}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar">
+  <div class="sb-logo"><div class="sn">Yang Chen Lin</div><div class="sr">Neuro · AI Design</div></div>
+  <div class="sb-nav">
+    <div class="ng">Pages</div>
+    <a class="na" href="about.html">About</a>
+    <a class="na" href="research.html">Research</a>
+    <a class="na cur" href="publications.html">Publications</a>
+    <a class="na" href="news.html">News</a>
+    <a class="na" href="blog.html">Blog</a>
+  </div>
+  <div class="sb-foot">
+    <button class="ttog" onclick="toggleTheme()"><span id="tlbl" style="font-size:11px;color:var(--fg3)">Light Mode</span><span class="tpill"></span></button>
+    <div class="sbadge" onclick="toggleOpp(event)" role="button" tabindex="0">
+      <div class="opp-popup" id="opp-popup">
+        <div class="opp-title">Open to opportunities</div>
+        <div class="opp-item"><span class="opp-dot"></span>Research internship / RA</div>
+        <div class="opp-item"><span class="opp-dot"></span>PhD programme (2026–27)</div>
+        <div class="opp-item"><span class="opp-dot"></span>Research collaboration</div>
+        <div class="opp-item"><span class="opp-dot"></span>Talk / seminar invitation</div>
+        <a class="opp-cta" href="mailto:your@email.com">Get in touch →</a>
+      </div>
+      Open to opportunities
+    </div>
+  </div>
+</nav>
+
+<main class="main">
+  <div class="ptbar">
+    <div><div class="pt-ey">HCI · Neuroimaging · Conversational AI · NeuroAI</div><h1 class="pt-h">Publications</h1></div>
+    <div class="pub-count">Showing <span id="shown">7</span> of 7</div>
+  </div>
+
+  <div class="page fi">
+    <div class="filters">
+      <div class="filter-row">
+        <span class="fl">Type</span>
+        <button class="fb on" data-f="type" data-v="all" onclick="doFilter(this)">All</button>
+        <button class="fb nb" data-f="type" data-v="conf" onclick="doFilter(this)">Conference</button>
+        <button class="fb nb" data-f="type" data-v="lbw" onclick="doFilter(this)">LBW</button>
+        <button class="fb nb" data-f="type" data-v="workshop" onclick="doFilter(this)">Workshop</button>
+        <button class="fb nb" data-f="type" data-v="journal" onclick="doFilter(this)">Journal</button>
+      </div>
+      <div class="filter-row">
+        <span class="fl">Topic</span>
+        <button class="fb" data-f="topic" data-v="hci" onclick="doFilter(this)">HCI & Design</button>
+        <button class="fb" data-f="topic" data-v="neuro" onclick="doFilter(this)">Neuroimaging</button>
+        <button class="fb" data-f="topic" data-v="ai" onclick="doFilter(this)">Conversational AI</button>
+        <button class="fb" data-f="topic" data-v="neuroai" onclick="doFilter(this)">NeuroAI</button>
+      </div>
+      <div class="filter-row">
+        <span class="fl">Role</span>
+        <button class="fb rb" data-f="role" data-v="first" onclick="doFilter(this)">★ First author</button>
+      </div>
+    </div>
+
+    <div id="pub-list">
+      <div class="yg" data-year="2026">
+        <div class="yg-label">2026</div>
+        <div class="pr" data-type="conf" data-topics="hci" data-role="first">
+          <div class="pr-venue">CHI '26</div>
+          <div class="pr-body">
+            <div class="pr-title">Evidence-Based Design Tools for Human–AI Co-Creation in Architectural Space</div>
+            <div class="pr-authors"><strong>Yang Chen Lin</strong>, Po-Chih Kuo</div>
+            <div class="pr-meta"><span class="tag tag-hci">HCI & Design</span><span class="tbadge tb-conf">Conference</span><span class="tb-first">★ First author</span></div>
+          </div>
+          <div class="pr-links"><a class="pl pl-pdf" href="#">PDF</a><a class="pl pl-doi" href="#">DOI</a><a class="pl pl-page" href="#">Project page</a><a class="pl pl-slides" href="#">Slides</a></div>
+        </div>
+        <div class="pr" data-type="conf" data-topics="ai" data-role="first">
+          <div class="pr-venue">CHI '26</div>
+          <div class="pr-body">
+            <div class="pr-title">Distance-Aware Prompting: Adapting LLM Responses to Psychological Distance of Queries</div>
+            <div class="pr-authors"><strong>Yang Chen Lin</strong>, Yi-Chieh Lee</div>
+            <div class="pr-meta"><span class="tag tag-ai">Conversational AI</span><span class="tbadge tb-conf">Conference</span><span class="tb-first">★ First author</span></div>
+          </div>
+          <div class="pr-links"><a class="pl pl-pdf" href="#">PDF</a><a class="pl pl-doi" href="#">DOI</a><a class="pl pl-page" href="#">Project page</a><a class="pl pl-slides" href="#">Slides</a></div>
+        </div>
+        <div class="pr" data-type="workshop" data-topics="neuroai" data-role="first">
+          <div class="pr-venue">AAAI '26</div>
+          <div class="pr-body">
+            <div class="pr-title">Shortcut Learning Through a NeuroAI Lens: Hippocampal Cognitive Maps as Inductive Bias</div>
+            <div class="pr-authors"><strong>Yang Chen Lin</strong></div>
+            <div class="pr-meta"><span class="tag tag-neuroai">NeuroAI</span><span class="tbadge tb-workshop">Workshop</span><span class="tb-first">★ First author</span></div>
+          </div>
+          <div class="pr-links"><a class="pl pl-pdf" href="#">PDF</a><a class="pl pl-doi" href="#">DOI</a><a class="pl pl-page" href="#">Project page</a><a class="pl pl-slides" href="#">Slides</a></div>
+        </div>
+      </div>
+
+      <div class="yg" data-year="2025">
+        <div class="yg-label">2025</div>
+        <div class="pr" data-type="conf" data-topics="ai" data-role="first">
+          <div class="pr-venue">CHI '25</div>
+          <div class="pr-body">
+            <div class="pr-title">Navigating Information Needs in Conversational AI via Psychological Distance</div>
+            <div class="pr-authors"><strong>Yang Chen Lin</strong>, Yi-Chieh Lee</div>
+            <div class="pr-meta"><span class="tag tag-ai">Conversational AI</span><span class="tbadge tb-conf">Conference</span><span class="tb-first">★ First author</span></div>
+          </div>
+          <div class="pr-links"><a class="pl pl-pdf" href="https://doi.org/10.1145/XXXXXXX" target="_blank" rel="noopener">PDF</a><a class="pl pl-doi" href="https://doi.org/10.1145/XXXXXXX" target="_blank" rel="noopener">DOI</a><a class="pl pl-page" href="#">Project page</a><a class="pl pl-slides" href="#">Slides</a></div>
+        </div>
+        <div class="pr" data-type="lbw" data-topics="hci neuro" data-role="first">
+          <div class="pr-venue">CHI '25 LBW</div>
+          <div class="pr-body">
+            <div class="pr-title">Eye-Tracking as a Feedback Medium in Architectural Design Workflows: A Pilot Study</div>
+            <div class="pr-authors"><strong>Yang Chen Lin</strong>, Po-Chih Kuo</div>
+            <div class="pr-meta"><span class="tag tag-hci">HCI & Design</span><span class="tag tag-neuro">Neuroimaging</span><span class="tbadge tb-lbw">LBW</span><span class="tb-first">★ First author</span></div>
+          </div>
+          <div class="pr-links"><a class="pl pl-pdf" href="https://doi.org/10.1145/XXXXXXX" target="_blank" rel="noopener">PDF</a><a class="pl pl-doi" href="https://doi.org/10.1145/XXXXXXX" target="_blank" rel="noopener">DOI</a><a class="pl pl-page" href="#">Project page</a><a class="pl pl-slides" href="#">Slides</a></div>
+        </div>
+        <div class="pr" data-type="journal" data-topics="neuro" data-role="">
+          <div class="pr-venue">NeuroImage</div>
+          <div class="pr-body">
+            <div class="pr-title">Scene-Selective Cortical Responses to Architectural and Natural Environments: A Multi-Site fMRI Study</div>
+            <div class="pr-authors">Chih-Mao Huang, <strong>Yang Chen Lin</strong>, [co-authors]</div>
+            <div class="pr-meta"><span class="tag tag-neuro">Neuroimaging</span><span class="tbadge tb-journal">Journal</span></div>
+          </div>
+          <div class="pr-links"><a class="pl pl-pdf" href="#">PDF</a><a class="pl pl-doi" href="#">DOI</a><a class="pl pl-page" href="#">Project page</a><a class="pl pl-slides" href="#">Slides</a></div>
+        </div>
+        <div class="pr" data-type="workshop" data-topics="ai" data-role="">
+          <div class="pr-venue">CSCW '25</div>
+          <div class="pr-body">
+            <div class="pr-title">ThreadRank: Structural Predictors of Viral Engagement in Threaded Social Platforms</div>
+            <div class="pr-authors">[co-authors], <strong>Yang Chen Lin</strong></div>
+            <div class="pr-meta"><span class="tag tag-ai">Conversational AI</span><span class="tbadge tb-workshop">Workshop</span></div>
+          </div>
+          <div class="pr-links"><a class="pl pl-pdf" href="#">PDF</a><a class="pl pl-doi" href="#">DOI</a><a class="pl pl-page" href="#">Project page</a><a class="pl pl-slides" href="#">Slides</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="no-results" id="no-results" style="display:none">No papers match the selected filters.</div>
+  </div>
+</main>
+</div>
+<script>
+function toggleOpp(e){
+  e.stopPropagation();
+  const p=document.getElementById('opp-popup');
+  if(p) p.classList.toggle('open');
+}
+document.addEventListener('click',function(){
+  const p=document.getElementById('opp-popup');
+  if(p) p.classList.remove('open');
+});
+(function(){const s=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',s);const l=document.getElementById('tlbl');if(l)l.textContent=s==='light'?'Dark Mode':'Light Mode';})();
+function toggleTheme(){const c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('theme',n);document.getElementById('tlbl').textContent=n==='light'?'Dark Mode':'Light Mode';}
+const st={type:'all',topics:new Set(),role:''};
+function doFilter(btn){
+  const f=btn.dataset.f,v=btn.dataset.v;
+  if(f==='type'){st.type=v;document.querySelectorAll('[data-f="type"]').forEach(b=>b.classList.remove('on'));btn.classList.add('on');}
+  else if(f==='topic'){if(st.topics.has(v)){st.topics.delete(v);btn.classList.remove('on');}else{st.topics.add(v);btn.classList.add('on');}}
+  else if(f==='role'){if(st.role===v){st.role='';btn.classList.remove('on');}else{st.role=v;btn.classList.add('on');}}
+  rerender();
+}
+function rerender(){
+  const rows=document.querySelectorAll('.pr');let shown=0;
+  rows.forEach(r=>{
+    const mt=st.type==='all'||r.dataset.type===st.type;
+    const tops=(r.dataset.topics||'').split(' ');
+    const mtp=st.topics.size===0||[...st.topics].some(t=>tops.includes(t));
+    const mr=!st.role||r.dataset.role===st.role;
+    const show=mt&&mtp&&mr;r.style.display=show?'':'none';if(show)shown++;
+  });
+  document.querySelectorAll('.yg').forEach(g=>{const any=[...g.querySelectorAll('.pr')].some(r=>r.style.display!=='none');g.style.display=any?'':'none';});
+  document.getElementById('shown').textContent=shown;
+  document.getElementById('no-results').style.display=shown===0?'':'none';
+}
+const fo=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');fo.unobserve(x.target);}});},{threshold:0.05});
+document.querySelectorAll('.fi').forEach(el=>fo.observe(el));
+</script>
+</body>
+</html>

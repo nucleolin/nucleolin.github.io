@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research · Yang Chen Lin</title>
+
+<!-- ═══ GOOGLE ANALYTICS ═══
+  1. Go to https://analytics.google.com → Admin → Create Property
+  2. Copy your Measurement ID (looks like G-XXXXXXXXXX)
+  3. Replace "G-XXXXXXXXXX" below with your real ID
+  4. Done — GA will start tracking visitors immediately
+-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<style>
+/* ── TOKENS ── */
+:root {
+  --bg:     #1a1714;
+  --bg2:    #232018;
+  --bg3:    #2c2820;
+  --bg4:    #353028;
+  --fg:     #ede8e0;
+  --fg2:    #a89e90;
+  --fg3:    #665e52;
+  --acc:    #d4924a;
+  --amb:    #6aa4c8;
+  --blue:   #6aa4c8;
+  --violet: #9d8fe8;
+  --bdr:    rgba(255,255,255,0.08);
+  --bdr2:   rgba(255,255,255,0.14);
+
+  --tag-hci-bg:    #1e2e1a; --tag-hci-fg:    #6bc46a;
+  --tag-neuro-bg:  #221840; --tag-neuro-fg:  #9d8fe8;
+  --tag-ai-bg:     #122040; --tag-ai-fg:     #6aa4c8;
+  --tag-neuroai-bg:#2e1e08; --tag-neuroai-fg:#d4924a;
+}
+[data-theme="light"] {
+  --bg:  #f5f2ec; --bg2: #fdfbf7; --bg3: #ede9e0; --bg4: #e4e0d4;
+  --fg:  #1c1814; --fg2: #5a5048; --fg3: #9a9088;
+  --acc: #a0640a; --amb: #2a6a94; --blue: #2a6a94; --violet: #5a4ab0;
+  --bdr: rgba(0,0,0,0.07); --bdr2: rgba(0,0,0,0.12);
+  --tag-hci-bg: #cceacc; --tag-hci-fg: #0a5c0a;
+  --tag-neuro-bg: #ddd6f8; --tag-neuro-fg: #3a2a88;
+  --tag-ai-bg: #cce0f4; --tag-ai-fg: #0a3a7a;
+  --tag-neuroai-bg: #f5e0c8; --tag-neuroai-fg: #6a3e00;
+}
+
+/* ── RESET ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--fg);font-size:14px;line-height:1.65;min-height:100vh;transition:background .25s,color .25s}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── LAYOUT ── */
+.layout{display:flex;min-height:100vh}
+
+/* ── SIDEBAR ── */
+.sidebar{width:200px;min-width:200px;background:var(--bg2);border-right:0.5px solid var(--bdr);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto}
+.sb-logo{padding:22px 18px 18px;border-bottom:0.5px solid var(--bdr)}
+.sb-logo .sn{font-size:13px;font-weight:600;color:var(--fg)}
+.sb-logo .sr{font-size:10px;color:var(--fg3);margin-top:2px}
+.sb-nav{padding:14px 0;flex:1}
+.ng{padding:12px 18px 4px;font-size:9px;color:var(--fg3);letter-spacing:.1em;text-transform:uppercase}
+.na{display:block;padding:6px 18px;font-size:12px;color:var(--fg2);border-left:2px solid transparent;transition:all .15s;cursor:pointer;text-decoration:none}
+.na:hover{color:var(--fg);background:rgba(212,146,74,0.04);text-decoration:none}
+.na.cur{color:var(--acc);border-left-color:var(--acc);background:rgba(212,146,74,0.07);font-weight:500}
+.na.sub{font-size:11px;padding-left:28px;color:var(--fg3)}
+.na.sub:hover{color:var(--fg2)}
+.na.sub.cur{color:var(--acc);border-left-color:var(--acc)}
+.sb-foot{padding:14px 18px;border-top:0.5px solid var(--bdr);display:flex;flex-direction:column;gap:10px}
+.ttog{background:none;border:0.5px solid var(--bdr2);border-radius:20px;padding:5px 10px;cursor:pointer;display:flex;align-items:center;gap:6px;color:var(--fg3);font-size:11px;transition:border-color .2s}
+.ttog:hover{border-color:var(--acc);color:var(--fg2)}
+.tpill{width:26px;height:14px;background:var(--bg3);border-radius:7px;position:relative;transition:background .2s}
+.tpill::after{content:'';position:absolute;top:2px;left:2px;width:10px;height:10px;border-radius:50%;background:var(--acc);transition:transform .2s}
+[data-theme="light"] .tpill::after{transform:translateX(12px)}
+.sbadge{font-size:10px;color:var(--acc);display:flex;align-items:center;gap:5px;cursor:pointer;user-select:none;position:relative}
+.sbadge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--acc);flex-shrink:0;animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.opp-popup{display:none;position:absolute;bottom:calc(100% + 8px);left:0;width:210px;background:var(--bg2);border:0.5px solid var(--bdr2);border-radius:10px;padding:14px 16px;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,.35)}
+.opp-popup.open{display:block}
+.opp-popup::after{content:'';position:absolute;bottom:-5px;left:14px;width:8px;height:8px;background:var(--bg2);border-right:0.5px solid var(--bdr2);border-bottom:0.5px solid var(--bdr2);transform:rotate(45deg)}
+.opp-title{font-size:11px;font-weight:600;color:var(--fg);margin-bottom:8px}
+.opp-item{font-size:11px;color:var(--fg2);padding:4px 0;border-bottom:0.5px solid var(--bdr);display:flex;align-items:center;gap:7px;line-height:1.4}
+.opp-item:last-child{border-bottom:none;padding-bottom:0}
+.opp-dot{width:5px;height:5px;border-radius:50%;background:var(--acc);flex-shrink:0}
+.opp-cta{margin-top:10px;display:block;font-size:10px;color:var(--acc);text-align:center;padding:5px;border:0.5px solid rgba(212,146,74,0.3);border-radius:6px;text-decoration:none;transition:background .15s}
+.opp-cta:hover{background:rgba(212,146,74,0.1);text-decoration:none}
+
+/* ── MAIN ── */
+.main{flex:1;min-width:0}
+.ptbar{padding:18px 32px;border-bottom:0.5px solid var(--bdr);background:var(--bg2);position:sticky;top:0;z-index:10}
+.pt-ey{font-size:10px;color:var(--fg3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+.pt-h{font-size:22px;font-weight:600;color:var(--fg)}
+.page{padding:32px;max-width:860px}
+
+/* ── SECTIONS ── */
+.ps{margin-bottom:48px}
+.sh{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px;padding-bottom:10px;border-bottom:0.5px solid var(--bdr)}
+.st{font-size:16px;font-weight:600;color:var(--fg)}
+.sct{font-size:11px;color:var(--fg3)}
+
+/* ── FADE IN ── */
+.fi{opacity:0;transform:translateY(12px);transition:opacity .5s,transform .5s}
+.fi.vis{opacity:1;transform:translateY(0)}
+.ps{scroll-margin-top:72px}
+
+/* ── VISION ── */
+.vbox{background:var(--bg2);border:0.5px solid var(--bdr);border-radius:10px;padding:24px 28px}
+.vq{font-size:14px;font-style:italic;color:var(--acc);border-left:2px solid var(--acc);padding-left:16px;margin-bottom:18px;line-height:1.7}
+.vb{font-size:13px;color:var(--fg2);line-height:1.8}
+.vb strong{color:var(--fg)}
+.vb em{color:var(--acc)}
+.vpillars{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.vpillar{background:var(--bg3);border-radius:8px;padding:14px 16px}
+.vplbl{font-size:11px;font-weight:600;color:var(--acc);margin-bottom:5px}
+.vptxt{font-size:11px;color:var(--fg3);line-height:1.6}
+
+/* ── PROJECTS ── */
+.proj-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.pf-btn{font-size:11px;padding:4px 12px;border-radius:20px;border:0.5px solid var(--bdr2);background:none;color:var(--fg3);cursor:pointer;transition:all .15s}
+.pf-btn:hover{border-color:var(--acc);color:var(--fg2)}
+.pf-btn.on{background:rgba(107,203,163,0.12);border-color:var(--acc);color:var(--acc)}
+.proj-count{font-size:11px;color:var(--fg3);margin-bottom:16px}
+.proj-count span{color:var(--fg);font-weight:500}
+
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:14px}
+.pc{background:var(--bg2);border:0.5px solid var(--bdr);border-radius:10px;padding:18px 20px;transition:border-color .2s}
+.pc:hover{border-color:var(--bdr2)}
+.pc-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}
+.pc-title{font-size:13px;font-weight:600;color:var(--fg);line-height:1.4}
+.pc-status{font-size:9px;padding:3px 8px;border-radius:20px;white-space:nowrap;flex-shrink:0;font-weight:500;letter-spacing:.04em;text-transform:uppercase}
+.status-ongoing{background:rgba(107,203,163,0.15);color:var(--acc);border:0.5px solid rgba(107,203,163,0.3)}
+.status-past{background:rgba(255,255,255,0.05);color:var(--fg3);border:0.5px solid var(--bdr)}
+.pc-period{font-size:10px;color:var(--fg3);margin-bottom:8px}
+.pc-desc{font-size:12px;color:var(--fg2);line-height:1.7;margin-bottom:12px}
+.pc-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.pc-tags{display:flex;gap:5px;flex-wrap:wrap}
+.tag{font-size:10px;padding:2px 8px;border-radius:4px;font-weight:500}
+.tag-hci{background:var(--tag-hci-bg);color:var(--tag-hci-fg)}
+.tag-neuro{background:var(--tag-neuro-bg);color:var(--tag-neuro-fg)}
+.tag-ai{background:var(--tag-ai-bg);color:var(--tag-ai-fg)}
+.tag-neuroai{background:var(--tag-neuroai-bg);color:var(--tag-neuroai-fg)}
+.pc-pubs{display:flex;gap:6px;flex-wrap:wrap}
+.pub-chip{font-size:10px;padding:2px 7px;border-radius:4px;background:rgba(91,155,213,0.1);color:var(--blue);border:0.5px solid rgba(91,155,213,0.2);text-decoration:none;transition:background .15s}
+.pub-chip:hover{background:rgba(91,155,213,0.2);text-decoration:none}
+
+/* ── RESEARCH DIRECTIONS ── */
+.rg{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.rc{background:var(--bg2);border:0.5px solid var(--bdr);border-radius:10px;padding:18px 20px;transition:border-color .2s}
+.rc:hover{border-color:var(--bdr2)}
+.rc-top{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px}
+.rc-icon{font-size:22px;line-height:1}
+.rc-num{font-size:9px;color:var(--fg3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px}
+.rc-title{font-size:13px;font-weight:600;color:var(--fg);line-height:1.4}
+.rc-sub{font-size:10px;color:var(--fg3);margin-top:3px}
+.rc-desc{font-size:12px;color:var(--fg2);line-height:1.75;margin-bottom:12px}
+.rc-desc strong{color:var(--fg)}
+.rc-qs{list-style:none;display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
+.rc-qs li{font-size:11px;color:var(--fg3);padding-left:14px;position:relative;line-height:1.5}
+.rc-qs li::before{content:'→';position:absolute;left:0;color:var(--acc)}
+.rc-papers{display:flex;gap:6px;flex-wrap:wrap}
+.rp{font-size:10px;padding:2px 7px;border-radius:4px;background:rgba(255,255,255,0.05);color:var(--fg3);border:0.5px solid var(--bdr)}
+
+/* ── ACCENTUATE ONGOING CARD BORDER ── */
+.pc[data-status="ongoing"]{border-left:2px solid var(--acc)}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<!-- ══ SIDEBAR ══ -->
+<nav class="sidebar">
+  <div class="sb-logo">
+    <div class="sn">Yang Chen Lin</div>
+    <div class="sr">Neuro · AI Design</div>
+  </div>
+  <div class="sb-nav">
+    <div class="ng">Pages</div>
+    <a class="na" href="about.html">About</a>
+    <a class="na cur" href="research.html">Research</a>
+    <a class="na" href="publications.html">Publications</a>
+    <a class="na" href="news.html">News</a>
+    <a class="na" href="blog.html">Blog</a>
+    <div class="ng">On This Page</div>
+    <a class="na sub" href="#vision">Research Vision</a>
+    <a class="na sub" href="#projects">Projects</a>
+    <a class="na sub" href="#directions">Directions</a>
+  </div>
+  <div class="sb-foot">
+    <button class="ttog" onclick="toggleTheme()">
+      <span id="tlbl" style="font-size:11px;color:var(--fg3)">Light Mode</span>
+      <span class="tpill"></span>
+    </button>
+    <div class="sbadge" onclick="toggleOpp(event)" role="button" tabindex="0">
+      <div class="opp-popup" id="opp-popup">
+        <div class="opp-title">Open to opportunities</div>
+        <div class="opp-item"><span class="opp-dot"></span>Research internship / RA</div>
+        <div class="opp-item"><span class="opp-dot"></span>PhD programme (2026–27)</div>
+        <div class="opp-item"><span class="opp-dot"></span>Research collaboration</div>
+        <div class="opp-item"><span class="opp-dot"></span>Talk / seminar invitation</div>
+        <a class="opp-cta" href="mailto:your@email.com">Get in touch →</a>
+      </div>
+      Open to opportunities
+    </div>
+  </div>
+</nav>
+
+<!-- ══ MAIN ══ -->
+<main class="main">
+  <div class="ptbar">
+    <div class="pt-ey">HCI · Cognitive Neuroscience · AI</div>
+    <h1 class="pt-h">Research</h1>
+  </div>
+  <div class="page">
+
+    <!-- ── VISION ── -->
+    <div class="ps fi" id="vision">
+      <div class="sh"><h2 class="st">Research Vision</h2></div>
+      <div class="vbox">
+        <div class="vq">"How can we design tools, methods, and systems that make human cognition — and the richness of lived experience — legible to AI, so that humans and machines can genuinely co-create?"</div>
+        <div class="vb">
+          I am fundamentally interested in the <strong>gap between how humans perceive and inhabit the world</strong> and how current AI systems represent it. Human experience is spatial, emotional, culturally situated, and deeply embodied — yet most AI operates on abstracted patterns stripped of this context. My work sits at the intersection of <strong>cognitive science, HCI, and AI</strong>.
+          <br><br>
+          This plays out across two interlocking threads. The first concerns <strong>built environments</strong>: architecture shapes how we feel, focus, and connect, yet designers still rely largely on intuition. I build systems that translate neuroimaging data, eye-tracking, and behavioral signals into design-time feedback — enabling <strong>evidence-based human–AI co-design</strong>. The second concerns <strong>social and informational landscapes</strong>: as conversational AI becomes a primary interface for knowledge-seeking, I examine how the <em>psychological distance</em> of a query shapes what users want from a system.
+        </div>
+        <div class="vpillars">
+          <div class="vpillar">
+            <div class="vplbl">Human Experience → Design</div>
+            <div class="vptxt">Translating perceptual and neural signals into actionable design-time feedback.</div>
+          </div>
+          <div class="vpillar">
+            <div class="vplbl">Cognition → AI Evaluation</div>
+            <div class="vptxt">Using fMRI and behavioral data to benchmark AI representation alignment.</div>
+          </div>
+          <div class="vpillar">
+            <div class="vplbl">Social Context → Interfaces</div>
+            <div class="vptxt">Reshaping conversational AI design around situation-dependent information needs.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PROJECTS ── -->
+    <div class="ps fi" id="projects">
+      <div class="sh">
+        <h2 class="st">Projects</h2>
+        <span class="sct" id="proj-count-label">6 projects</span>
+      </div>
+
+      <div class="proj-filters">
+        <button class="pf-btn on" data-filter="all" onclick="filterProjects(this)">All</button>
+        <button class="pf-btn" data-filter="ongoing" onclick="filterProjects(this)">● Ongoing</button>
+        <button class="pf-btn" data-filter="past" onclick="filterProjects(this)">Past</button>
+        <button class="pf-btn" data-filter="hci" onclick="filterProjects(this)">HCI & Design</button>
+        <button class="pf-btn" data-filter="neuro" onclick="filterProjects(this)">Neuroimaging</button>
+        <button class="pf-btn" data-filter="ai" onclick="filterProjects(this)">Conversational AI</button>
+        <button class="pf-btn" data-filter="neuroai" onclick="filterProjects(this)">NeuroAI</button>
+      </div>
+
+      <div class="proj-grid" id="proj-grid">
+
+        <!-- ONGOING 1 -->
+        <div class="pc" data-status="ongoing" data-tags="hci ongoing">
+          <div class="pc-head">
+            <div class="pc-title">ArchSense: Multimodal Feedback System for Architectural Co-Design</div>
+            <span class="pc-status status-ongoing">Ongoing</span>
+          </div>
+          <div class="pc-period">02/2025 – present · NTHU HMI Lab</div>
+          <div class="pc-desc">
+            A real-time design feedback platform that fuses eye-tracking fixation maps, physiological signals (EDA, HR), and AI-predicted saliency overlays to help architects understand how users experience spatial proposals before they are built. Currently integrating a diffusion-model component for generative iteration on floor plans.
+          </div>
+          <div class="pc-footer">
+            <div class="pc-tags">
+              <span class="tag tag-hci">HCI & Design</span>
+            </div>
+            <div class="pc-pubs">
+              <a class="pub-chip" href="#">CHI '26</a>
+              <a class="pub-chip" href="#">CHI '25 LBW</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ONGOING 2 -->
+        <div class="pc" data-status="ongoing" data-tags="ai ongoing">
+          <div class="pc-head">
+            <div class="pc-title">PsyDist: Psychological Distance in LLM Information-Seeking</div>
+            <span class="pc-status status-ongoing">Ongoing</span>
+          </div>
+          <div class="pc-period">09/2024 – present · NUS AI4SG Lab (collab.)</div>
+          <div class="pc-desc">
+            Investigates how construal level theory and psychological distance (temporal, social, spatial, hypothetical) shape users' information needs when querying conversational AI. The current phase focuses on developing a distance-aware prompting framework that adapts LLM response style to query distance.
+          </div>
+          <div class="pc-footer">
+            <div class="pc-tags">
+              <span class="tag tag-ai">Conversational AI</span>
+            </div>
+            <div class="pc-pubs">
+              <a class="pub-chip" href="#">CHI '25</a>
+              <a class="pub-chip" href="#">CHI '26</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ONGOING 3 -->
+        <div class="pc" data-status="ongoing" data-tags="neuroai ongoing">
+          <div class="pc-head">
+            <div class="pc-title">ShortcutBrain: Hippocampal Cognitive Maps & DNN Shortcut Learning</div>
+            <span class="pc-status status-ongoing">Ongoing</span>
+          </div>
+          <div class="pc-period">06/2024 – present · Independent / NeuroAI</div>
+          <div class="pc-desc">
+            Asks whether the structured, relational representations in hippocampal cognitive maps can serve as a biologically-grounded inductive bias to reduce shortcut learning in deep neural networks. Ongoing work extends the AAAI workshop paper toward a full empirical evaluation on out-of-distribution benchmarks.
+          </div>
+          <div class="pc-footer">
+            <div class="pc-tags">
+              <span class="tag tag-neuroai">NeuroAI</span>
+            </div>
+            <div class="pc-pubs">
+              <a class="pub-chip" href="#">AAAI '26 Workshop</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAST 1 -->
+        <div class="pc" data-status="past" data-tags="neuro past">
+          <div class="pc-head">
+            <div class="pc-title">fMRI Preprocessing Pipeline for Spatial Cognition Studies</div>
+            <span class="pc-status status-past">Past</span>
+          </div>
+          <div class="pc-period">2022 – 2024 · NCTU / HKU (Dr. Chih-Mao Huang)</div>
+          <div class="pc-desc">
+            Developed and validated an fMRIPrep-based preprocessing pipeline tailored for spatial cognition paradigms. Work included custom confound regression strategies, quality control dashboards, and a replication of scene-selective cortex localizer experiments across two scanner sites.
+          </div>
+          <div class="pc-footer">
+            <div class="pc-tags">
+              <span class="tag tag-neuro">Neuroimaging</span>
+            </div>
+            <div class="pc-pubs"></div>
+          </div>
+        </div>
+
+        <!-- PAST 2 -->
+        <div class="pc" data-status="past" data-tags="hci past">
+          <div class="pc-head">
+            <div class="pc-title">EyeSpace: Eye-Tracking Study of Architectural Attention Patterns</div>
+            <span class="pc-status status-past">Past</span>
+          </div>
+          <div class="pc-period">2023 – 2024 · NTHU HMI Lab</div>
+          <div class="pc-desc">
+            A controlled study examining how architectural features (ceiling height, aperture ratio, material texture) influence visual attention allocation using a portable Tobii eye-tracker. Generated a dataset of fixation maps across 40 interior scenes that now serves as training data for the ArchSense saliency model.
+          </div>
+          <div class="pc-footer">
+            <div class="pc-tags">
+              <span class="tag tag-hci">HCI & Design</span>
+              <span class="tag tag-neuro">Neuroimaging</span>
+            </div>
+            <div class="pc-pubs">
+              <a class="pub-chip" href="#">CHI '25 LBW</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAST 3 -->
+        <div class="pc" data-status="past" data-tags="ai past">
+          <div class="pc-head">
+            <div class="pc-title">ThreadRank: Engagement Dynamics in Threaded Social Discourse</div>
+            <span class="pc-status status-past">Past</span>
+          </div>
+          <div class="pc-period">2023 · Exploratory</div>
+          <div class="pc-desc">
+            Exploratory analysis of how viral post formats ("第幾屆" series) propagate across Threads. Built a small dataset of thread engagement metrics and applied network analysis to identify structural features that predict virality. Informing future work on social issue tracing.
+          </div>
+          <div class="pc-footer">
+            <div class="pc-tags">
+              <span class="tag tag-ai">Conversational AI</span>
+            </div>
+            <div class="pc-pubs"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── RESEARCH DIRECTIONS ── -->
+    <div class="ps fi" id="directions">
+      <div class="sh">
+        <h2 class="st">Research Directions</h2>
+        <span class="sct">04 themes</span>
+      </div>
+      <div class="rg">
+
+        <div class="rc">
+          <div class="rc-top">
+            <div class="rc-icon">🏛️</div>
+            <div>
+              <div class="rc-num">THEME 01</div>
+              <div class="rc-title">Human–AI Co-Design in Architecture</div>
+              <div class="rc-sub">Evidence-Based Design Tools · HCI</div>
+            </div>
+          </div>
+          <div class="rc-desc">Architecture shapes how we feel, focus, and connect — yet design decisions remain largely intuitive. I develop <strong>computational tools</strong> that feed real human perceptual data into the design process, enabling designers and AI to genuinely collaborate.</div>
+          <ul class="rc-qs">
+            <li>How can eye-tracking and physiological data be represented in ways designers can act on?</li>
+            <li>What level of AI autonomy is appropriate in a co-design workflow?</li>
+            <li>Can generative models produce spatially coherent proposals that satisfy measurable human perceptual criteria?</li>
+          </ul>
+          <div class="rc-papers">
+            <span class="rp">CHI '26</span><span class="rp">CHI '25 LBW</span>
+          </div>
+        </div>
+
+        <div class="rc">
+          <div class="rc-top">
+            <div class="rc-icon">🧠</div>
+            <div>
+              <div class="rc-num">THEME 02</div>
+              <div class="rc-title">Neuroimaging & Spatial Cognition</div>
+              <div class="rc-sub">fMRI · Scene Perception · Cognitive Maps</div>
+            </div>
+          </div>
+          <div class="rc-desc">Using fMRI and behavioral paradigms to understand how the brain encodes spatial and architectural experience, and how these representations can ground better AI models of human perception.</div>
+          <ul class="rc-qs">
+            <li>Which cortical regions are preferentially activated by architectural versus natural scenes?</li>
+            <li>How do individual differences in spatial memory predict aesthetic preference?</li>
+            <li>Can scene-selective neural responses serve as evaluation signal for generative architectural AI?</li>
+          </ul>
+          <div class="rc-papers">
+            <span class="rp">In preparation</span>
+          </div>
+        </div>
+
+        <div class="rc">
+          <div class="rc-top">
+            <div class="rc-icon">💬</div>
+            <div>
+              <div class="rc-num">THEME 03</div>
+              <div class="rc-title">Conversational AI & Information-Seeking</div>
+              <div class="rc-sub">Psychological Distance · LLM UX</div>
+            </div>
+          </div>
+          <div class="rc-desc">As LLMs become primary knowledge interfaces, I examine how <strong>psychological distance</strong> shapes information needs — and what it means to design AI that genuinely adapts to those needs rather than producing uniform responses.</div>
+          <ul class="rc-qs">
+            <li>How does temporal or social distance change what a user wants from a search system?</li>
+            <li>Can distance-aware prompting strategies measurably improve user satisfaction?</li>
+            <li>How do people calibrate trust in AI responses across different distance conditions?</li>
+          </ul>
+          <div class="rc-papers">
+            <span class="rp">CHI '25</span><span class="rp">CHI '26</span>
+          </div>
+        </div>
+
+        <div class="rc">
+          <div class="rc-top">
+            <div class="rc-icon">⚡</div>
+            <div>
+              <div class="rc-num">THEME 04</div>
+              <div class="rc-title">NeuroAI: Brain-Inspired Machine Learning</div>
+              <div class="rc-sub">Cognitive Maps · Shortcut Learning · Alignment</div>
+            </div>
+          </div>
+          <div class="rc-desc">Using brain-imaging findings not just to study humans, but to probe and improve deep neural networks — asking whether alignment with biological cognition makes AI more robust and interpretable.</div>
+          <ul class="rc-qs">
+            <li>Do hippocampal cognitive map structures reduce shortcut learning in DNNs?</li>
+            <li>How does self-supervised learning in the cerebellum inform biologically plausible propagation?</li>
+            <li>Can neural alignment scores predict OOD generalization performance?</li>
+          </ul>
+          <div class="rc-papers">
+            <span class="rp">AAAI '26 NeuroAI</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /page -->
+</main>
+</div><!-- /layout -->
+
+<script>
+(function(){
+  const s = localStorage.getItem('theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', s);
+  const l = document.getElementById('tlbl');
+  if (l) l.textContent = s === 'light' ? 'Dark Mode' : 'Light Mode';
+})();
+
+function toggleTheme() {
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  document.getElementById('tlbl').textContent = next === 'light' ? 'Dark Mode' : 'Light Mode';
+}
+
+const fo = new IntersectionObserver(e => {
+  e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('vis'); fo.unobserve(x.target); } });
+}, { threshold: 0.05 });
+document.querySelectorAll('.fi').forEach(el => fo.observe(el));
+
+function filterProjects(btn) {
+  document.querySelectorAll('.pf-btn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  const f = btn.dataset.filter;
+  const cards = document.querySelectorAll('.pc');
+  let shown = 0;
+  cards.forEach(c => {
+    const tags = c.dataset.tags || '';
+    const show = f === 'all' || tags.includes(f);
+    c.style.display = show ? '' : 'none';
+    if (show) shown++;
+  });
+  document.getElementById('proj-count-label').textContent = shown + ' project' + (shown !== 1 ? 's' : '');
+}
+</script>
+</body>
+</html>

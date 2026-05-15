@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About · Yang Chen Lin</title>
+<meta name="description" content="Yang Chen Lin — Graduate Researcher at NTHU HMI Lab. HCI, Cognitive Neuroscience, Conversational AI.">
+
+<!-- ═══ GOOGLE ANALYTICS 4 ═══
+  Replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com
+-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<style>
+:root{
+  --bg:#1a1714;--bg2:#232018;--bg3:#2c2820;--bg4:#353028;
+  --fg:#ede8e0;--fg2:#a89e90;--fg3:#665e52;
+  --acc:#d4924a;--amb:#6aa4c8;--blue:#6aa4c8;--violet:#9d8fe8;
+  --bdr:rgba(255,255,255,0.08);--bdr2:rgba(255,255,255,0.14);
+  --tag-hci-bg:#1e2e1a;--tag-hci-fg:#6bc46a;
+  --tag-neuro-bg:#221840;--tag-neuro-fg:#9d8fe8;
+  --tag-ai-bg:#122040;--tag-ai-fg:#6aa4c8;
+  --tag-neuroai-bg:#2e1e08;--tag-neuroai-fg:#d4924a;
+}
+[data-theme="light"]{
+  --bg:#f5f2ec;--bg2:#fdfbf7;--bg3:#ede9e0;--bg4:#e4e0d4;
+  --fg:#1c1814;--fg2:#5a5048;--fg3:#9a9088;
+  --acc:#a0640a;--amb:#2a6a94;--blue:#2a6a94;--violet:#5a4ab0;
+  --bdr:rgba(0,0,0,0.07);--bdr2:rgba(0,0,0,0.12);
+  --tag-hci-bg:#cceacc;--tag-hci-fg:#0a5c0a;
+  --tag-neuro-bg:#ddd6f8;--tag-neuro-fg:#3a2a88;
+  --tag-ai-bg:#cce0f4;--tag-ai-fg:#0a3a7a;
+  --tag-neuroai-bg:#f5e0c8;--tag-neuroai-fg:#6a3e00;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--fg);font-size:14px;line-height:1.65;min-height:100vh;transition:background .25s,color .25s}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+.layout{display:flex;min-height:100vh}
+.sidebar{width:200px;min-width:200px;background:var(--bg2);border-right:0.5px solid var(--bdr);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto}
+.sb-logo{padding:22px 18px 18px;border-bottom:0.5px solid var(--bdr)}
+.sn{font-size:13px;font-weight:600;color:var(--fg)}
+.sr{font-size:10px;color:var(--fg3);margin-top:2px}
+.sb-nav{padding:14px 0;flex:1}
+.ng{padding:12px 18px 4px;font-size:9px;color:var(--fg3);letter-spacing:.1em;text-transform:uppercase}
+.na{display:block;padding:6px 18px;font-size:12px;color:var(--fg2);border-left:2px solid transparent;transition:all .15s;text-decoration:none}
+.na:hover{color:var(--fg);background:rgba(212,146,74,0.04);text-decoration:none}
+.na.cur{color:var(--acc);border-left-color:var(--acc);background:rgba(212,146,74,0.07);font-weight:500}
+.na.sub{font-size:11px;padding-left:28px;color:var(--fg3)}
+.na.sub:hover{color:var(--fg2)}
+.sb-foot{padding:14px 18px;border-top:0.5px solid var(--bdr);display:flex;flex-direction:column;gap:10px}
+.ttog{background:none;border:0.5px solid var(--bdr2);border-radius:20px;padding:5px 10px;cursor:pointer;display:flex;align-items:center;gap:6px;color:var(--fg3);font-size:11px;transition:border-color .2s}
+.ttog:hover{border-color:var(--acc);color:var(--fg2)}
+.tpill{width:26px;height:14px;background:var(--bg3);border-radius:7px;position:relative}
+.tpill::after{content:'';position:absolute;top:2px;left:2px;width:10px;height:10px;border-radius:50%;background:var(--acc);transition:transform .2s}
+[data-theme="light"] .tpill::after{transform:translateX(12px)}
+.sbadge{font-size:10px;color:var(--acc);display:flex;align-items:center;gap:5px;cursor:pointer;user-select:none;position:relative}
+.sbadge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--acc);flex-shrink:0;animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.opp-popup{display:none;position:absolute;bottom:calc(100% + 8px);left:0;width:210px;background:var(--bg2);border:0.5px solid var(--bdr2);border-radius:10px;padding:14px 16px;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,.35)}
+.opp-popup.open{display:block}
+.opp-popup::after{content:'';position:absolute;bottom:-5px;left:14px;width:8px;height:8px;background:var(--bg2);border-right:0.5px solid var(--bdr2);border-bottom:0.5px solid var(--bdr2);transform:rotate(45deg)}
+.opp-title{font-size:11px;font-weight:600;color:var(--fg);margin-bottom:8px}
+.opp-item{font-size:11px;color:var(--fg2);padding:4px 0;border-bottom:0.5px solid var(--bdr);display:flex;align-items:center;gap:7px;line-height:1.4}
+.opp-item:last-child{border-bottom:none;padding-bottom:0}
+.opp-dot{width:5px;height:5px;border-radius:50%;background:var(--acc);flex-shrink:0}
+.opp-cta{margin-top:10px;display:block;font-size:10px;color:var(--acc);text-align:center;padding:5px;border:0.5px solid rgba(212,146,74,0.3);border-radius:6px;text-decoration:none;transition:background .15s}
+.opp-cta:hover{background:rgba(212,146,74,0.1);text-decoration:none}
+.main{flex:1;min-width:0}
+.ptbar{padding:18px 32px;border-bottom:0.5px solid var(--bdr);background:var(--bg2);position:sticky;top:0;z-index:10}
+.pt-ey{font-size:10px;color:var(--fg3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+.pt-h{font-size:22px;font-weight:600;color:var(--fg)}
+.page{padding:32px;max-width:820px}
+.ps{margin-bottom:44px}
+.sh{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px;padding-bottom:10px;border-bottom:0.5px solid var(--bdr)}
+.st{font-size:16px;font-weight:600;color:var(--fg)}
+.fi{opacity:0;transform:translateY(12px);transition:opacity .5s,transform .5s}
+.fi.vis{opacity:1;transform:translateY(0)}
+.ps{scroll-margin-top:72px}
+
+/* hero */
+.hero{display:flex;gap:24px;align-items:flex-start;margin-bottom:36px}
+.photo-box{width:96px;height:96px;border-radius:50%;background:var(--bg3);border:1.5px dashed var(--fg3);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:600;color:var(--acc);flex-shrink:0;position:relative;overflow:hidden}
+.photo-box img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.hero-text .hn{font-size:22px;font-weight:700;color:var(--fg);margin-bottom:2px}
+.hero-text .hz{font-size:14px;color:var(--fg3);margin-bottom:6px}
+.hero-text .hr{font-size:12px;color:var(--fg2);margin-bottom:14px}
+.hero-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.tag{font-size:10px;padding:2px 9px;border-radius:4px;font-weight:500}
+.tag-hci{background:var(--tag-hci-bg);color:var(--tag-hci-fg)}
+.tag-neuro{background:var(--tag-neuro-bg);color:var(--tag-neuro-fg)}
+.tag-ai{background:var(--tag-ai-bg);color:var(--tag-ai-fg)}
+.hero-links{display:flex;gap:8px;flex-wrap:wrap}
+.hl{font-size:11px;padding:4px 10px;border-radius:6px;border:0.5px solid var(--bdr2);color:var(--fg2);transition:all .15s;text-decoration:none}
+.hl:hover{border-color:var(--acc);color:var(--acc);text-decoration:none}
+.bio{font-size:13px;color:var(--fg2);line-height:1.8}
+.bio strong{color:var(--fg)}
+
+/* timeline rows */
+.trow{display:flex;gap:16px;padding:12px 0;border-bottom:0.5px solid var(--bdr)}
+.trow:last-child{border-bottom:none}
+.tr-period{font-size:11px;color:var(--fg3);min-width:90px;padding-top:1px;flex-shrink:0}
+.tr-body .tr-title{font-size:13px;font-weight:500;color:var(--fg)}
+.tr-body .tr-sub{font-size:11px;color:var(--fg3);margin-top:2px}
+.tr-body .tr-detail{font-size:11px;color:var(--fg2);margin-top:4px;line-height:1.6}
+
+/* skills */
+.skill-rows{display:flex;flex-direction:column;gap:0}
+.skill-row{display:flex;align-items:baseline;gap:14px;padding:10px 0;border-bottom:0.5px solid var(--bdr)}
+.skill-row:last-child{border-bottom:none}
+.sk-cat{font-size:11px;color:var(--fg3);min-width:96px;flex-shrink:0;padding-top:1px}
+.sk-pills{display:flex;flex-wrap:wrap;gap:5px}
+.sk{font-size:11px;padding:2px 9px;border-radius:20px;background:var(--bg3);color:var(--fg2);border:0.5px solid var(--bdr)}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<nav class="sidebar">
+  <div class="sb-logo">
+    <div class="sn">Yang Chen Lin</div>
+    <div class="sr">Neuro · AI Design</div>
+  </div>
+  <div class="sb-nav">
+    <div class="ng">Pages</div>
+    <a class="na cur" href="about.html">About</a>
+    <a class="na" href="research.html">Research</a>
+    <a class="na" href="publications.html">Publications</a>
+    <a class="na" href="news.html">News</a>
+    <a class="na" href="blog.html">Blog</a>
+  </div>
+  <div class="sb-foot">
+    <button class="ttog" onclick="toggleTheme()">
+      <span id="tlbl" style="font-size:11px;color:var(--fg3)">Light Mode</span>
+      <span class="tpill"></span>
+    </button>
+    <div class="sbadge" onclick="toggleOpp(event)" role="button" tabindex="0">
+      <div class="opp-popup" id="opp-popup">
+        <div class="opp-title">Open to opportunities</div>
+        <div class="opp-item"><span class="opp-dot"></span>Research internship / RA</div>
+        <div class="opp-item"><span class="opp-dot"></span>PhD programme (2026–27)</div>
+        <div class="opp-item"><span class="opp-dot"></span>Research collaboration</div>
+        <div class="opp-item"><span class="opp-dot"></span>Talk / seminar invitation</div>
+        <a class="opp-cta" href="mailto:your@email.com">Get in touch →</a>
+      </div>
+      Open to opportunities
+    </div>
+  </div>
+</nav>
+
+<main class="main">
+  <div class="ptbar">
+    <div class="pt-ey">Graduate Researcher · NTHU · Taiwan</div>
+    <h1 class="pt-h">About</h1>
+  </div>
+  <div class="page">
+
+    <!-- HERO -->
+    <div class="fi" id="intro" style="margin-bottom:44px">
+      <div class="hero">
+        <div class="photo-box">
+          <!-- To add your photo: replace this div content with:
+               <img src="photo.jpg" alt="Yang Chen Lin"> -->
+          YC
+        </div>
+        <div class="hero-text">
+          <div class="hn">Yang Chen Lin</div>
+          <div class="hz">林泱辰</div>
+          <div class="hr">Graduate Researcher · National Tsing Hua University, Taiwan</div>
+          <div class="hero-tags">
+            <span class="tag tag-hci">HCI & Design</span>
+            <span class="tag tag-neuro">Cognitive Neuroscience</span>
+            <span class="tag tag-ai">Conversational AI</span>
+          </div>
+          <div class="hero-links">
+            <a class="hl" href="#">CV / Resume</a>
+            <a class="hl" href="#">Google Scholar</a>
+            <a class="hl" href="#">GitHub</a>
+            <a class="hl" href="#">Twitter / X</a>
+            <a class="hl" href="#">LinkedIn</a>
+            <a class="hl" href="mailto:your@email.com">Email</a>
+          </div>
+        </div>
+      </div>
+      <div class="bio">
+        Hi, I'm <strong>YC</strong> — a graduate student (from 02/2025) at <strong>National Tsing Hua University (NTHU)</strong>, working with <a href="#">Dr. Po-Chih Kuo</a> in the <a href="#">HMI Lab</a>, Department of Computer Science.<br><br>
+        My research explores the <strong>spatial, social, and design cognition</strong> of humans and AI in built environments, combining <strong>human-computer interaction (HCI)</strong> with <strong>cognitive computational neuroscience</strong> — integrating cognitive science, neuroimaging, and machine learning to study how people experience and shape their environments.<br><br>
+        I collaborate with <a href="#">Dr. Yi-Chieh (EJ) Lee</a> at the <a href="#">AI4SG Lab, NUS</a> on conversational AI and information-seeking behavior, and was previously trained in fMRI under <a href="#">Dr. Chih-Mao Huang</a> at NCTU/HKU.
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="ps fi" id="education">
+      <div class="sh"><h2 class="st">Education</h2></div>
+      <div class="trow">
+        <div class="tr-period">02/2025 – present</div>
+        <div class="tr-body">
+          <div class="tr-title">M.S. in Computer Science</div>
+          <div class="tr-sub">National Tsing Hua University (NTHU), Hsinchu, Taiwan</div>
+          <div class="tr-detail">HMI Lab · Advisor: Dr. Po-Chih Kuo · Focus: HCI, Cognitive Neuroscience, AI</div>
+        </div>
+      </div>
+      <div class="trow">
+        <div class="tr-period">2020 – 2024</div>
+        <div class="tr-body">
+          <div class="tr-title">B.S. in [Your Undergraduate Major]</div>
+          <div class="tr-sub">[Your Undergraduate University], Taiwan</div>
+          <div class="tr-detail">GPA: X.XX / 4.0 · Relevant coursework: [add courses]</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="ps fi" id="experience">
+      <div class="sh"><h2 class="st">Experience</h2></div>
+      <div class="trow">
+        <div class="tr-period">02/2025 – present</div>
+        <div class="tr-body">
+          <div class="tr-title">Graduate Research Assistant</div>
+          <div class="tr-sub">NTHU HMI Lab · Hsinchu, Taiwan</div>
+          <div class="tr-detail">Building multimodal design feedback systems; leading ArchSense project; co-supervising one undergraduate researcher.</div>
+        </div>
+      </div>
+      <div class="trow">
+        <div class="tr-period">09/2024 – present</div>
+        <div class="tr-body">
+          <div class="tr-title">Research Collaborator</div>
+          <div class="tr-sub">NUS AI4SG Lab · Singapore (remote)</div>
+          <div class="tr-detail">Investigating psychological distance in conversational AI with Dr. Yi-Chieh (EJ) Lee; first-authored CHI '25 paper from this collaboration.</div>
+        </div>
+      </div>
+      <div class="trow">
+        <div class="tr-period">2022 – 2024</div>
+        <div class="tr-body">
+          <div class="tr-title">Research Assistant — Neuroimaging</div>
+          <div class="tr-sub">NCTU / HKU · Dr. Chih-Mao Huang</div>
+          <div class="tr-detail">fMRI data collection and preprocessing; spatial cognition paradigm design; developed QC dashboard used across two scanner sites.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICE -->
+    <div class="ps fi" id="service">
+      <div class="sh"><h2 class="st">Service & Academic Activities</h2></div>
+      <div class="trow">
+        <div class="tr-period">2025 – present</div>
+        <div class="tr-body">
+          <div class="tr-title">Reviewer</div>
+          <div class="tr-sub">ACM CHI 2026, ACM CSCW 2026</div>
+        </div>
+      </div>
+      <div class="trow">
+        <div class="tr-period">2025</div>
+        <div class="tr-body">
+          <div class="tr-title">Student Volunteer</div>
+          <div class="tr-sub">ACM CHI 2025, Yokohama, Japan</div>
+        </div>
+      </div>
+      <div class="trow">
+        <div class="tr-period">2024</div>
+        <div class="tr-body">
+          <div class="tr-title">Teaching Assistant</div>
+          <div class="tr-sub">NTHU CS — Introduction to HCI</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="ps fi" id="skills">
+      <div class="sh"><h2 class="st">Skills</h2></div>
+      <div class="skill-rows">
+        <div class="skill-row">
+          <span class="sk-cat">Programming</span>
+          <div class="sk-pills">
+            <span class="sk">Python</span><span class="sk">PyTorch</span><span class="sk">R</span><span class="sk">JavaScript</span><span class="sk">MATLAB</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="sk-cat">Neuroimaging</span>
+          <div class="sk-pills">
+            <span class="sk">fMRIPrep</span><span class="sk">FreeSurfer</span><span class="sk">FSL</span><span class="sk">SPM</span><span class="sk">Nilearn</span><span class="sk">Eye-tracking</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="sk-cat">Methods</span>
+          <div class="sk-pills">
+            <span class="sk">User studies</span><span class="sk">Mixed methods</span><span class="sk">fMRI design</span><span class="sk">Statistical modeling</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="sk-cat">Tools</span>
+          <div class="sk-pills">
+            <span class="sk">Figma</span><span class="sk">Git</span><span class="sk">LaTeX</span><span class="sk">Notion</span><span class="sk">Obsidian</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+</div>
+
+<!-- Umami Analytics (optional — replace data-website-id with yours from umami.is) -->
+<!-- <script defer src="https://cloud.umami.is/script.js" data-website-id="YOUR-UMAMI-ID"></script> -->
+
+<script>
+(function(){
+  const s = localStorage.getItem('theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', s);
+  const l = document.getElementById('tlbl');
+  if (l) l.textContent = s === 'light' ? 'Dark Mode' : 'Light Mode';
+})();
+function toggleTheme() {
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  document.getElementById('tlbl').textContent = next === 'light' ? 'Dark Mode' : 'Light Mode';
+}
+const fo = new IntersectionObserver(e => {
+  e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('vis'); fo.unobserve(x.target); } });
+}, { threshold: 0.05 });
+document.querySelectorAll('.fi').forEach(el => fo.observe(el));
+</script>
+</body>
+</html>
