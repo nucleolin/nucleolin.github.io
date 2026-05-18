@@ -13,20 +13,12 @@
   --fg:#ede8e0;--fg2:#a89e90;--fg3:#665e52;
   --acc:#d4924a;--amb:#6aa4c8;--blue:#6aa4c8;--violet:#9d8fe8;
   --bdr:rgba(255,255,255,0.08);--bdr2:rgba(255,255,255,0.14);
-  --tag-hci-bg:#1e2e1a;--tag-hci-fg:#6bc46a;
-  --tag-neuro-bg:#221840;--tag-neuro-fg:#9d8fe8;
-  --tag-ai-bg:#122040;--tag-ai-fg:#6aa4c8;
-  --tag-neuroai-bg:#2e1e08;--tag-neuroai-fg:#d4924a;
 }
 [data-theme="light"]{
   --bg:#f5f2ec;--bg2:#fdfbf7;--bg3:#ede9e0;--bg4:#e4e0d4;
   --fg:#1c1814;--fg2:#5a5048;--fg3:#9a9088;
   --acc:#a0640a;--amb:#2a6a94;--blue:#2a6a94;--violet:#5a4ab0;
   --bdr:rgba(0,0,0,0.07);--bdr2:rgba(0,0,0,0.12);
-  --tag-hci-bg:#cceacc;--tag-hci-fg:#0a5c0a;
-  --tag-neuro-bg:#ddd6f8;--tag-neuro-fg:#3a2a88;
-  --tag-ai-bg:#cce0f4;--tag-ai-fg:#0a3a7a;
-  --tag-neuroai-bg:#f5e0c8;--tag-neuroai-fg:#6a3e00;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -79,10 +71,7 @@ a:hover{text-decoration:underline}
 .hero-text .hr{font-size:12px;color:var(--fg2);margin-bottom:14px}
 .hero-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
 .tag{font-size:10px;padding:2px 9px;border-radius:4px;font-weight:500}
-.tag-hci{background:var(--tag-hci-bg);color:var(--tag-hci-fg)}
-.tag-neuro{background:var(--tag-neuro-bg);color:var(--tag-neuro-fg)}
-.tag-ai{background:var(--tag-ai-bg);color:var(--tag-ai-fg)}
-.tag-neuroai{background:var(--tag-neuroai-bg);color:var(--tag-neuroai-fg)}
+.tag-hci,.tag-neuro,.tag-ai,.tag-neuroai{background:var(--bg3);color:var(--fg2)}
 .hero-links{display:flex;gap:8px;flex-wrap:wrap}
 .hl{font-size:11px;padding:4px 10px;border-radius:6px;border:0.5px solid var(--bdr2);color:var(--fg2);transition:all .15s;text-decoration:none}
 .hl:hover{border-color:var(--acc);color:var(--acc);text-decoration:none}
@@ -116,7 +105,7 @@ a:hover{text-decoration:underline}
     <a class="na" href="research.html">Research</a>
     <a class="na" href="publications.html">Publications</a>
     <a class="na" href="news.html">News</a>
-    <a class="na" href="blog.html">Blog</a>
+    <!-- <a class="na" href="blog.html">Blog</a> -->
   </div>
   <div class="sb-foot">
     <button class="ttog" onclick="toggleTheme()"><span id="tlbl" style="font-size:11px;color:var(--fg3)">Light Mode</span><span class="tpill"></span></button>
