@@ -88,22 +88,48 @@ a:hover{text-decoration:underline}
 .tb-journal{background:rgba(107,196,106,0.1);color:#6bc46a;border:0.5px solid rgba(107,196,106,0.2)}
 .tb-poster{background:rgba(106,164,200,0.08);color:var(--blue);border:0.5px solid rgba(106,164,200,0.15)}
 .tb-first{font-size:9px;padding:2px 7px;border-radius:3px;background:rgba(212,146,74,0.07);color:var(--acc)}
-.pr-links{display:flex;gap:5px;flex-wrap:wrap}
+.pr-links{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:6px}
 .pl{font-size:10px;padding:2px 8px;border-radius:4px;text-decoration:none;border:0.5px solid;transition:opacity .15s;white-space:nowrap}
 .pl:hover{opacity:.72;text-decoration:none}
 .pl-pdf{background:rgba(200,60,60,0.1);color:#c84040;border-color:rgba(200,60,60,0.3)}
-.pl-doi{background:rgba(106,164,200,0.1);color:var(--blue);border-color:rgba(106,164,200,0.3)}
+.pl-poster{background:rgba(106,164,200,0.1);color:var(--blue);border-color:rgba(106,164,200,0.3)}
+.pl-talk{background:rgba(157,143,232,0.1);color:var(--violet);border-color:rgba(157,143,232,0.3)}
 .pl-page{background:rgba(212,146,74,0.1);color:var(--acc);border-color:rgba(212,146,74,0.3)}
-.pl-slides{background:rgba(157,143,232,0.1);color:var(--violet);border-color:rgba(157,143,232,0.3)}
 .pl-video{background:rgba(107,196,106,0.1);color:#5aaa5a;border-color:rgba(107,196,106,0.3)}
+.pl-ph{opacity:.4}
+.pr-desc{font-size:11px;color:var(--fg3);line-height:1.6;font-style:italic}
 .no-results{text-align:center;padding:60px 0;color:var(--fg3);font-size:13px}
 .accept-rate{font-size:9px;color:var(--fg3);padding:2px 6px;border-radius:3px;background:rgba(255,255,255,0.04);border:0.5px solid var(--bdr)}
+
+/* ── Mobile responsive ── */
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:4px;background:none;border:none;cursor:pointer;padding:10px 14px;flex-shrink:0}
+.hamburger span{display:block;width:18px;height:1.5px;background:var(--fg2);border-radius:2px;transition:all .2s}
+@media(max-width:720px){
+  .layout{flex-direction:column}
+  .sidebar{width:100%;min-width:unset;height:auto;position:relative;flex-direction:row;align-items:center;border-right:none;border-bottom:0.5px solid var(--bdr)}
+  .sb-logo{border-bottom:none;padding:12px 16px;flex:1}
+  .sb-nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg2);border-bottom:0.5px solid var(--bdr);padding:6px 0;z-index:20;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+  .sb-nav.open{display:block}
+  .sb-foot{display:none}
+  .hamburger{display:flex}
+  .page{padding:20px 16px}
+  .hero{flex-direction:column;align-items:flex-start}
+  .photo-box{margin-bottom:12px}
+  .ptbar{padding:14px 16px}
+  .filters{gap:6px}
+  .filter-row{gap:4px}
+  .news-grid{display:block}
+  .col:last-child{padding-left:0;border-left:none;padding-top:20px;border-top:0.5px solid var(--bdr)}
+  .pr{gap:8px}
+  .pr-venue{min-width:54px;font-size:9px}
+}
 </style>
 </head>
 <body>
 <div class="layout">
 <nav class="sidebar">
   <div class="sb-logo"><div class="sn">Yang Chen Lin</div><div class="sr">HCI · Neuro · AI</div></div>
+      <button class="hamburger" onclick="document.querySelector('.sb-nav').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
   <div class="sb-nav">
     <div class="ng">Pages</div>
     <a class="na" href="about.html">About</a>
@@ -174,11 +200,12 @@ a:hover{text-decoration:underline}
               <span class="accept-rate">25.3% acceptance · Barcelona</span>
             </div>
             <div class="pr-links">
-              <a class="pl pl-pdf" href="https://dl.acm.org/doi/full/10.1145/3772318.3791378" target="_blank" rel="noopener">PDF</a>
-              <a class="pl pl-doi" href="https://dl.acm.org/doi/full/10.1145/3772318.3791378" target="_blank" rel="noopener">DOI</a>
-              <a class="pl pl-video" href="#" onclick="event.preventDefault()">Video</a>
-              <a class="pl pl-page" href="#" onclick="event.preventDefault()">Project Page</a>
+              <a class="pl pl-pdf" href="https://dl.acm.org/doi/full/10.1145/3772318.3791378" target="_blank" rel="noopener">Paper PDF</a>
+              <a class="pl pl-talk pl-ph" href="#" onclick="event.preventDefault()">Presentation</a>
+              <a class="pl pl-page pl-ph" href="#" onclick="event.preventDefault()">Project Page</a>
+              <a class="pl pl-video pl-ph" href="#" onclick="event.preventDefault()">Demo Video</a>
             </div>
+            <div class="pr-desc">Embeds neuroimaging and eye-tracking data into LLM-assisted workflows, enabling evidence-based human–AI co-creation for architectural interior design.</div>
           </div>
         </div>
 
@@ -188,16 +215,17 @@ a:hover{text-decoration:underline}
             <div class="pr-title">Fit Matters: Format-Distance Alignment Improves Conversational Search</div>
             <div class="pr-authors">Yitian Yang, Yugin Tan, Jung-Tai King, <strong>Yang Chen Lin</strong>, Yi-Chieh Lee</div>
             <div class="pr-meta">
-              <span class="tag tag-ai">Human-Computer Interaction</span>
+              <span class="tag tag-hci">Human-Computer Interaction</span>
               <span class="tbadge tb-conf">Conference</span>
               <span class="accept-rate">25.3% acceptance · Barcelona</span>
             </div>
             <div class="pr-links">
-              <a class="pl pl-pdf" href="https://dl.acm.org/doi/full/10.1145/3772318.3790317" target="_blank" rel="noopener">PDF</a>
-              <a class="pl pl-doi" href="https://dl.acm.org/doi/full/10.1145/3772318.3790317" target="_blank" rel="noopener">DOI</a>
-              <a class="pl pl-video" href="#" onclick="event.preventDefault()">Video</a>
-              <a class="pl pl-page" href="#" onclick="event.preventDefault()">Project Page</a>
+              <a class="pl pl-pdf" href="https://dl.acm.org/doi/full/10.1145/3772318.3790317" target="_blank" rel="noopener">Paper PDF</a>
+              <a class="pl pl-talk pl-ph" href="#" onclick="event.preventDefault()">Presentation</a>
+              <a class="pl pl-page pl-ph" href="#" onclick="event.preventDefault()">Project Page</a>
+              <a class="pl pl-video pl-ph" href="#" onclick="event.preventDefault()">Demo Video</a>
             </div>
+            <div class="pr-desc">Matching response abstraction level to users' psychological distance significantly improves satisfaction and trust in conversational search interactions.</div>
           </div>
         </div>
 
@@ -213,9 +241,11 @@ a:hover{text-decoration:underline}
               <span class="accept-rate">10/77 accepted · Singapore</span>
             </div>
             <div class="pr-links">
-              <a class="pl pl-pdf" href="https://www.researchgate.net/publication/400058661_Play_the_MisMatch_Using_fMRI-Aligned_Feature_Fine-Tuning_to_Reveal_Shortcut_Bias_in_Deep_Neural_Networks" target="_blank" rel="noopener">PDF</a>
-              <a class="pl pl-page" href="#" onclick="event.preventDefault()">Project Page</a>
+              <a class="pl pl-pdf" href="https://www.researchgate.net/publication/400058661_Play_the_MisMatch_Using_fMRI-Aligned_Feature_Fine-Tuning_to_Reveal_Shortcut_Bias_in_Deep_Neural_Networks" target="_blank" rel="noopener">Paper PDF</a>
+              <a class="pl pl-poster pl-ph" href="#" onclick="event.preventDefault()">Poster</a>
+              <a class="pl pl-page pl-ph" href="#" onclick="event.preventDefault()">Project Page</a>
             </div>
+            <div class="pr-desc">fMRI-aligned fine-tuning reveals and diagnoses shortcut learning bias in DNNs by comparing human neural encoding patterns with model representations across matched/mismatched stimuli.</div>
           </div>
         </div>
       </div>
@@ -236,11 +266,11 @@ a:hover{text-decoration:underline}
               <span class="accept-rate">32.8% acceptance · Yokohama</span>
             </div>
             <div class="pr-links">
-              <a class="pl pl-pdf" href="https://dl.acm.org/doi/full/10.1145/3706599.3719720" target="_blank" rel="noopener">PDF</a>
-              <a class="pl pl-doi" href="https://dl.acm.org/doi/full/10.1145/3706599.3719720" target="_blank" rel="noopener">DOI</a>
-              <a class="pl pl-video" href="#" onclick="event.preventDefault()">Video</a>
-              <a class="pl pl-page" href="#" onclick="event.preventDefault()">Project Page</a>
+              <a class="pl pl-pdf" href="https://dl.acm.org/doi/full/10.1145/3706599.3719720" target="_blank" rel="noopener">Paper PDF</a>
+              <a class="pl pl-poster pl-ph" href="#" onclick="event.preventDefault()">Poster</a>
+              <a class="pl pl-page pl-ph" href="#" onclick="event.preventDefault()">Project Page</a>
             </div>
+            <div class="pr-desc">Formative study identifying design barriers in current AI-assisted architectural tools, proposing an HCI-informed framework for collective human–machine intelligence in the design process.</div>
           </div>
         </div>
 
@@ -250,16 +280,16 @@ a:hover{text-decoration:underline}
             <div class="pr-title">Psychological Distance in Conversational vs. Web Search</div>
             <div class="pr-authors">Yitian Yang, Yugin Tan, <strong>Yang Chen Lin</strong>, Jung-Tai King, Zihan Liu, Yi-Chieh Lee</div>
             <div class="pr-meta">
-              <span class="tag tag-ai">Human-Computer Interaction</span>
+              <span class="tag tag-hci">Human-Computer Interaction</span>
               <span class="tbadge tb-conf">Conference</span>
               <span class="accept-rate">24.9% acceptance · Yokohama</span>
             </div>
             <div class="pr-links">
-              <a class="pl pl-pdf" href="https://dl.acm.org/doi/full/10.1145/3706598.3713770" target="_blank" rel="noopener">PDF</a>
-              <a class="pl pl-doi" href="https://dl.acm.org/doi/full/10.1145/3706598.3713770" target="_blank" rel="noopener">DOI</a>
-              <a class="pl pl-video" href="#" onclick="event.preventDefault()">Video</a>
-              <a class="pl pl-page" href="#" onclick="event.preventDefault()">Project Page</a>
+              <a class="pl pl-pdf" href="https://dl.acm.org/doi/full/10.1145/3706598.3713770" target="_blank" rel="noopener">Paper PDF</a>
+              <a class="pl pl-talk pl-ph" href="#" onclick="event.preventDefault()">Presentation</a>
+              <a class="pl pl-page pl-ph" href="#" onclick="event.preventDefault()">Project Page</a>
             </div>
+            <div class="pr-desc">Construal Level Theory explains user preferences: conversational AI suits psychologically distant (abstract, future-oriented) queries; web search for concrete, immediate needs.</div>
           </div>
         </div>
 
@@ -275,6 +305,10 @@ a:hover{text-decoration:underline}
               <span class="tb-first">★ First author</span>
               <span class="accept-rate">Salk Institute, San Diego</span>
             </div>
+            <div class="pr-links">
+              <a class="pl pl-poster pl-ph" href="#" onclick="event.preventDefault()">Poster</a>
+            </div>
+            <div class="pr-desc">fMRI reveals distinct functional connectivity attenuation patterns evoked by different residential interior styles in visual and spatial processing networks.</div>
           </div>
         </div>
       </div>
@@ -295,10 +329,10 @@ a:hover{text-decoration:underline}
               <span class="accept-rate">Int'l Journal of Human-Computer Studies, 103357</span>
             </div>
             <div class="pr-links">
-              <a class="pl pl-pdf" href="https://www.sciencedirect.com/science/article/abs/pii/S107158192400140X" target="_blank" rel="noopener">PDF</a>
-              <a class="pl pl-doi" href="https://www.sciencedirect.com/science/article/abs/pii/S107158192400140X" target="_blank" rel="noopener">DOI</a>
-              <a class="pl pl-page" href="#" onclick="event.preventDefault()">Project Page</a>
+              <a class="pl pl-pdf" href="https://www.sciencedirect.com/science/article/abs/pii/S107158192400140X" target="_blank" rel="noopener">Paper PDF</a>
+              <a class="pl pl-page pl-ph" href="#" onclick="event.preventDefault()">Project Page</a>
             </div>
+            <div class="pr-desc">Multi-method evaluation framework for scent-related UX, integrating semantic association networks, psychophysiological measures, and subjective ratings across diverse scent stimuli.</div>
           </div>
         </div>
 
@@ -313,6 +347,10 @@ a:hover{text-decoration:underline}
               <span class="tbadge tb-conf">Conference</span>
               <span class="accept-rate">IEEE EMBC 2024 · Orlando</span>
             </div>
+            <div class="pr-links">
+              <a class="pl pl-pdf pl-ph" href="#" onclick="event.preventDefault()">Paper PDF</a>
+            </div>
+            <div class="pr-desc">EEG-based olfactory decoding combining neural signals with gas sensor data to objectively assess and classify odor perception experiences.</div>
           </div>
         </div>
       </div>
@@ -332,6 +370,10 @@ a:hover{text-decoration:underline}
               <span class="tbadge tb-conf">Conference</span>
               <span class="accept-rate">IEEE ICHMS 2021</span>
             </div>
+            <div class="pr-links">
+              <a class="pl pl-pdf pl-ph" href="#" onclick="event.preventDefault()">Paper PDF</a>
+            </div>
+            <div class="pr-desc">BCI-driven olfactory interface that monitors EEG-detected mental states and adjusts ambient fragrance in real-time to support mental state regulation.</div>
           </div>
         </div>
 
@@ -346,6 +388,10 @@ a:hover{text-decoration:underline}
               <span class="tb-first">★ First author</span>
               <span class="accept-rate">SfN 2021 · San Diego</span>
             </div>
+            <div class="pr-links">
+              <a class="pl pl-poster pl-ph" href="#" onclick="event.preventDefault()">Poster</a>
+            </div>
+            <div class="pr-desc">Naturalistic fMRI and ISC analysis mapping how neural response patterns correlate with sign language proficiency across signers and learners.</div>
           </div>
         </div>
       </div>
@@ -366,6 +412,10 @@ a:hover{text-decoration:underline}
               <span class="tb-first">★ First author</span>
               <span class="accept-rate">ANFA 2020 · Virtual</span>
             </div>
+            <div class="pr-links">
+              <a class="pl pl-poster pl-ph" href="#" onclick="event.preventDefault()">Poster</a>
+            </div>
+            <div class="pr-desc">Cross-cultural fMRI study revealing how socio-cultural background modulates neural responses to exterior and interior architectural environments.</div>
           </div>
         </div>
 
@@ -380,6 +430,10 @@ a:hover{text-decoration:underline}
               <span class="tb-first">★ First author</span>
               <span class="accept-rate">CNS 2019 · San Francisco</span>
             </div>
+            <div class="pr-links">
+              <a class="pl pl-poster pl-ph" href="#" onclick="event.preventDefault()">Poster</a>
+            </div>
+            <div class="pr-desc">fMRI evidence that cultural social values moderate the neural correlates of moral judgment during social decision-making scenarios.</div>
           </div>
         </div>
 
@@ -393,6 +447,7 @@ a:hover{text-decoration:underline}
               <span class="tbadge" style="background:rgba(212,146,74,0.1);color:var(--acc);border:0.5px solid rgba(212,146,74,0.2)">Under Review</span>
               <span class="tb-first">★ First author</span>
             </div>
+            <div class="pr-desc">Social values and cultural background jointly modulate neural correlates of moral evaluation, with distinct activation patterns across populations.</div>
           </div>
         </div>
       </div>
