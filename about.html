@@ -121,6 +121,31 @@ a:hover{text-decoration:underline}
   .pr{gap:8px}
   .pr-venue{min-width:54px;font-size:9px}
 }
+
+/* ── Orbit panel ── */
+.content-wrap{display:flex;align-items:flex-start}
+.page{flex:1;min-width:0;max-width:660px}
+.orbit-panel{width:210px;min-width:210px;padding:28px 20px 28px 24px;border-left:0.5px solid var(--bdr);position:sticky;top:0;max-height:100vh;overflow-y:auto;flex-shrink:0}
+.op-section{margin-bottom:22px}
+.op-label{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--fg3);margin-bottom:8px;padding-bottom:5px;border-bottom:0.5px solid var(--bdr)}
+.op-list{list-style:none;display:flex;flex-direction:column;gap:4px}
+.op-list li{font-size:11px;color:var(--fg2);line-height:1.5}
+.op-list a{color:var(--fg2);text-decoration:underline;text-underline-offset:2px}
+.op-list a:hover{color:var(--acc)}
+.op-log{display:flex;flex-direction:column;gap:6px}
+.op-log-entry{display:flex;gap:8px;font-size:11px;line-height:1.4}
+.op-log-date{color:var(--fg3);white-space:nowrap;min-width:52px;font-size:10px;padding-top:1px}
+.op-log-text{color:var(--fg2)}
+.op-log-text a{color:var(--fg2);text-decoration:underline;text-underline-offset:2px}
+.op-log-text a:hover{color:var(--acc)}
+/* ── Name hover photo ── */
+.name-hover{position:relative;display:inline-block;cursor:default}
+.name-tooltip{display:none;position:absolute;bottom:calc(100% + 10px);left:0;width:130px;border-radius:10px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.45);z-index:50;pointer-events:none;border:1px solid var(--bdr2)}
+.name-hover:hover .name-tooltip{display:block}
+.name-tooltip img{width:100%;display:block}
+.name-tooltip .nt-placeholder{width:100%;aspect-ratio:1;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--fg3)}
+@media(max-width:900px){.orbit-panel{display:none}}
+@media(max-width:720px){.page{max-width:unset}}
 </style>
 </head>
 <body>
@@ -156,6 +181,7 @@ a:hover{text-decoration:underline}
   <div class="ptbar">
     <h1 class="pt-h">About</h1>
   </div>
+  <div class="content-wrap">
   <div class="page">
 
     <div class="seeking fi">
@@ -171,7 +197,7 @@ a:hover{text-decoration:underline}
           YC
         </div>
         <div class="hero-text">
-          <div class="hn">Yang Chen Lin</div>
+          <div class="hn"><span class="name-hover">Yang Chen Lin<span class="name-tooltip"><span class="nt-placeholder">YC</span></span></span></div>
           <div class="hz">林泱辰</div>
           <div class="hero-tags">
             <span class="tag tag-neuro">Cognitive Neuroscience</span>
@@ -365,6 +391,48 @@ a:hover{text-decoration:underline}
       </div>
     </div>
 
+  </div>
+
+  <!-- ORBIT PANEL -->
+  <aside class="orbit-panel">
+
+    <div class="op-section">
+      <div class="op-label">upcoming</div>
+      <ul class="op-list">
+        <li>CHI 2026 · Barcelona · Apr</li>
+        <li>2027 Fall PhD applications</li>
+      </ul>
+    </div>
+
+    <div class="op-section">
+      <div class="op-label">recent</div>
+      <div class="op-log">
+        <div class="op-log-entry"><span class="op-log-date">May 2026</span><span class="op-log-text">Two papers at CHI '26, Barcelona</span></div>
+        <div class="op-log-entry"><span class="op-log-date">Mar 2025</span><span class="op-log-text">Joined NTHU HMI Lab, ranked 1st</span></div>
+        <div class="op-log-entry"><span class="op-log-date">Aug 2024</span><span class="op-log-text">Moving Boundaries scholarship, Stockholm</span></div>
+        <div class="op-log-entry"><span class="op-log-date">May 2025</span><span class="op-log-text">Two papers at CHI '25, Yokohama</span></div>
+      </div>
+    </div>
+
+    <div class="op-section">
+      <div class="op-label">wip</div>
+      <ul class="op-list">
+        <li>AIDED — interior design × AI</li>
+        <li>Thesis: Cognitive-AI benchmarking</li>
+        <li>Cross-cultural fMRI study <em>(under review)</em></li>
+      </ul>
+    </div>
+
+    <div class="op-section">
+      <div class="op-label">looking for</div>
+      <ul class="op-list">
+        <li>Summer/Winter 2026 internship</li>
+        <li>2027 Fall PhD position</li>
+        <li>Research collaborators</li>
+      </ul>
+    </div>
+
+  </aside>
   </div>
 </main>
 </div>
