@@ -95,6 +95,7 @@ a:hover{text-decoration:underline}
 .pl-doi{background:rgba(106,164,200,0.1);color:var(--blue);border-color:rgba(106,164,200,0.3)}
 .pl-page{background:rgba(212,146,74,0.1);color:var(--acc);border-color:rgba(212,146,74,0.3)}
 .pl-slides{background:rgba(157,143,232,0.1);color:var(--violet);border-color:rgba(157,143,232,0.3)}
+.pl-video{background:rgba(107,196,106,0.1);color:#5aaa5a;border-color:rgba(107,196,106,0.3)}
 .no-results{text-align:center;padding:60px 0;color:var(--fg3);font-size:13px}
 .accept-rate{font-size:9px;color:var(--fg3);padding:2px 6px;border-radius:3px;background:rgba(255,255,255,0.04);border:0.5px solid var(--bdr)}
 </style>
@@ -106,7 +107,7 @@ a:hover{text-decoration:underline}
   <div class="sb-nav">
     <div class="ng">Pages</div>
     <a class="na" href="about.html">About</a>
-    <a class="na" href="research.html">Research</a>
+    <!-- <a class="na" href="research.html">Research</a> -->
     <a class="na cur" href="publications.html">Publications</a>
     <a class="na" href="news.html">News</a>
     <!-- <a class="na" href="blog.html">Blog</a> -->
@@ -145,9 +146,8 @@ a:hover{text-decoration:underline}
       </div>
       <div class="filter-row">
         <span class="fl">Topic</span>
-        <button class="fb" data-f="topic" data-v="hci" onclick="doFilter(this)">HCI & Design</button>
-        <button class="fb" data-f="topic" data-v="neuro" onclick="doFilter(this)">Neuroimaging</button>
-        <button class="fb" data-f="topic" data-v="ai" onclick="doFilter(this)">Conversational AI</button>
+        <button class="fb" data-f="topic" data-v="hci" onclick="doFilter(this)">Human-Computer Interaction</button>
+        <button class="fb" data-f="topic" data-v="neuro" onclick="doFilter(this)">Cognitive Neuroscience</button>
         <button class="fb" data-f="topic" data-v="neuroai" onclick="doFilter(this)">NeuroAI</button>
       </div>
       <div class="filter-row">
@@ -168,7 +168,7 @@ a:hover{text-decoration:underline}
             <div class="pr-title">AIDED: Augmenting Interior Design with Human Experience Data for Designer–AI Co-Design</div>
             <div class="pr-authors"><strong>Lin, Y.C.</strong>, Chien, C.-Y., Hou, K.-H., Chen, H.-Y., & Kuo, P.-C.</div>
             <div class="pr-meta">
-              <span class="tag tag-hci">HCI & Design</span>
+              <span class="tag tag-hci">Human-Computer Interaction</span>
               <span class="tbadge tb-conf">Conference</span>
               <span class="tb-first">★ First author</span>
               <span class="accept-rate">25.3% acceptance · Barcelona</span>
@@ -176,23 +176,27 @@ a:hover{text-decoration:underline}
             <div class="pr-links">
               <a class="pl pl-pdf" href="https://dl.acm.org/doi/full/10.1145/3772318.3791378" target="_blank" rel="noopener">PDF</a>
               <a class="pl pl-doi" href="https://dl.acm.org/doi/full/10.1145/3772318.3791378" target="_blank" rel="noopener">DOI</a>
+              <a class="pl pl-video" href="#" onclick="event.preventDefault()">Video</a>
+              <a class="pl pl-page" href="#" onclick="event.preventDefault()">Project Page</a>
             </div>
           </div>
         </div>
 
-        <div class="pr" data-type="conf" data-topics="ai" data-role="">
+        <div class="pr" data-type="conf" data-topics="hci" data-role="">
           <div class="pr-venue">CHI '26</div>
           <div class="pr-body">
             <div class="pr-title">Fit Matters: Format-Distance Alignment Improves Conversational Search</div>
             <div class="pr-authors">Yang, Y., Tan, Y., King, J. T., <strong>Lin, Y.C.</strong> & Lee, Y. C.</div>
             <div class="pr-meta">
-              <span class="tag tag-ai">Conversational AI</span>
+              <span class="tag tag-ai">Human-Computer Interaction</span>
               <span class="tbadge tb-conf">Conference</span>
               <span class="accept-rate">25.3% acceptance · Barcelona</span>
             </div>
             <div class="pr-links">
               <a class="pl pl-pdf" href="https://dl.acm.org/doi/full/10.1145/3772318.3790317" target="_blank" rel="noopener">PDF</a>
               <a class="pl pl-doi" href="https://dl.acm.org/doi/full/10.1145/3772318.3790317" target="_blank" rel="noopener">DOI</a>
+              <a class="pl pl-video" href="#" onclick="event.preventDefault()">Video</a>
+              <a class="pl pl-page" href="#" onclick="event.preventDefault()">Project Page</a>
             </div>
           </div>
         </div>
@@ -210,6 +214,7 @@ a:hover{text-decoration:underline}
             </div>
             <div class="pr-links">
               <a class="pl pl-pdf" href="https://www.researchgate.net/publication/400058661_Play_the_MisMatch_Using_fMRI-Aligned_Feature_Fine-Tuning_to_Reveal_Shortcut_Bias_in_Deep_Neural_Networks" target="_blank" rel="noopener">PDF</a>
+              <a class="pl pl-page" href="#" onclick="event.preventDefault()">Project Page</a>
             </div>
           </div>
         </div>
@@ -225,7 +230,7 @@ a:hover{text-decoration:underline}
             <div class="pr-title">Shaping Architectural Design Tools Through HCI</div>
             <div class="pr-authors"><strong>Lin, Y.C.</strong>, Chung, W.-Y., Chien, C.-Y., Su, C.-H., & Kuo, P.C.</div>
             <div class="pr-meta">
-              <span class="tag tag-hci">HCI & Design</span>
+              <span class="tag tag-hci">Human-Computer Interaction</span>
               <span class="tbadge tb-lbw">LBW</span>
               <span class="tb-first">★ First author</span>
               <span class="accept-rate">32.8% acceptance · Yokohama</span>
@@ -233,23 +238,27 @@ a:hover{text-decoration:underline}
             <div class="pr-links">
               <a class="pl pl-pdf" href="https://dl.acm.org/doi/full/10.1145/3706599.3719720" target="_blank" rel="noopener">PDF</a>
               <a class="pl pl-doi" href="https://dl.acm.org/doi/full/10.1145/3706599.3719720" target="_blank" rel="noopener">DOI</a>
+              <a class="pl pl-video" href="#" onclick="event.preventDefault()">Video</a>
+              <a class="pl pl-page" href="#" onclick="event.preventDefault()">Project Page</a>
             </div>
           </div>
         </div>
 
-        <div class="pr" data-type="conf" data-topics="ai" data-role="">
+        <div class="pr" data-type="conf" data-topics="hci" data-role="">
           <div class="pr-venue">CHI '25</div>
           <div class="pr-body">
             <div class="pr-title">Psychological Distance in Conversational vs. Web Search</div>
             <div class="pr-authors">Yang, Y., Tan, Y., <strong>Lin, Y.C.</strong>, King, J., Liu, Z., & Lee, Y.</div>
             <div class="pr-meta">
-              <span class="tag tag-ai">Conversational AI</span>
+              <span class="tag tag-ai">Human-Computer Interaction</span>
               <span class="tbadge tb-conf">Conference</span>
               <span class="accept-rate">24.9% acceptance · Yokohama</span>
             </div>
             <div class="pr-links">
               <a class="pl pl-pdf" href="https://dl.acm.org/doi/full/10.1145/3706598.3713770" target="_blank" rel="noopener">PDF</a>
               <a class="pl pl-doi" href="https://dl.acm.org/doi/full/10.1145/3706598.3713770" target="_blank" rel="noopener">DOI</a>
+              <a class="pl pl-video" href="#" onclick="event.preventDefault()">Video</a>
+              <a class="pl pl-page" href="#" onclick="event.preventDefault()">Project Page</a>
             </div>
           </div>
         </div>
@@ -260,8 +269,8 @@ a:hover{text-decoration:underline}
             <div class="pr-title">Distinct Functional Connectivity Attenuations in Residential Interior Styles</div>
             <div class="pr-authors"><strong>Lin, Y.C.</strong>, Chung, W.Y., & Kuo, P.-C.</div>
             <div class="pr-meta">
-              <span class="tag tag-neuro">Neuroimaging</span>
-              <span class="tag tag-hci">HCI & Design</span>
+              <span class="tag tag-neuro">Cognitive Neuroscience</span>
+              <span class="tag tag-hci">Human-Computer Interaction</span>
               <span class="tbadge tb-poster">Poster</span>
               <span class="tb-first">★ First author</span>
               <span class="accept-rate">Salk Institute, San Diego</span>
@@ -280,7 +289,7 @@ a:hover{text-decoration:underline}
             <div class="pr-title">Representing Scents: An Evaluation Framework of Scent-related Experiences</div>
             <div class="pr-authors"><strong>Lin, Y.C.</strong>, Yu, S. L., Zhuang, A. Y., Lee, C., … & Kuo, P. C.</div>
             <div class="pr-meta">
-              <span class="tag tag-hci">HCI & Design</span>
+              <span class="tag tag-hci">Human-Computer Interaction</span>
               <span class="tbadge tb-journal">Journal</span>
               <span class="tb-first">★ First author</span>
               <span class="accept-rate">Int'l Journal of Human-Computer Studies, 103357</span>
@@ -288,6 +297,7 @@ a:hover{text-decoration:underline}
             <div class="pr-links">
               <a class="pl pl-pdf" href="https://www.sciencedirect.com/science/article/abs/pii/S107158192400140X" target="_blank" rel="noopener">PDF</a>
               <a class="pl pl-doi" href="https://www.sciencedirect.com/science/article/abs/pii/S107158192400140X" target="_blank" rel="noopener">DOI</a>
+              <a class="pl pl-page" href="#" onclick="event.preventDefault()">Project Page</a>
             </div>
           </div>
         </div>
@@ -298,8 +308,8 @@ a:hover{text-decoration:underline}
             <div class="pr-title">Deciphering Odor Perception Through EEG and Gas Sensors</div>
             <div class="pr-authors">Peng, H.-P., Hsiao, H.-L., Su, C.-H., <strong>Lin, Y.C.</strong> & Kuo, P. C.</div>
             <div class="pr-meta">
-              <span class="tag tag-neuro">Neuroimaging</span>
-              <span class="tag tag-hci">HCI & Design</span>
+              <span class="tag tag-neuro">Cognitive Neuroscience</span>
+              <span class="tag tag-hci">Human-Computer Interaction</span>
               <span class="tbadge tb-conf">Conference</span>
               <span class="accept-rate">IEEE EMBC 2024 · Orlando</span>
             </div>
@@ -317,8 +327,8 @@ a:hover{text-decoration:underline}
             <div class="pr-title">A Brain-Sensing Fragrance Diffuser for Mental State Regulation</div>
             <div class="pr-authors">Zhuang, A. Y., <strong>Lin, Y.C.</strong>, Yu, S. L., & Kuo, P. C.</div>
             <div class="pr-meta">
-              <span class="tag tag-hci">HCI & Design</span>
-              <span class="tag tag-neuro">Neuroimaging</span>
+              <span class="tag tag-hci">Human-Computer Interaction</span>
+              <span class="tag tag-neuro">Cognitive Neuroscience</span>
               <span class="tbadge tb-conf">Conference</span>
               <span class="accept-rate">IEEE ICHMS 2021</span>
             </div>
@@ -331,7 +341,7 @@ a:hover{text-decoration:underline}
             <div class="pr-title">Neural Basis of Sign Language Proficiency via Naturalistic fMRI and ISC</div>
             <div class="pr-authors"><strong>Lin, Y.C.</strong>, Chiu, Y. S., & Kuo, W. J.</div>
             <div class="pr-meta">
-              <span class="tag tag-neuro">Neuroimaging</span>
+              <span class="tag tag-neuro">Cognitive Neuroscience</span>
               <span class="tbadge tb-poster">Poster</span>
               <span class="tb-first">★ First author</span>
               <span class="accept-rate">SfN 2021 · San Diego</span>
@@ -350,8 +360,8 @@ a:hover{text-decoration:underline}
             <div class="pr-title">Socio-cultural Differences in Neural Underpinnings of Perceiving Built Environments</div>
             <div class="pr-authors"><strong>Lin, Y.C.</strong> & Huang, C. M.</div>
             <div class="pr-meta">
-              <span class="tag tag-neuro">Neuroimaging</span>
-              <span class="tag tag-hci">HCI & Design</span>
+              <span class="tag tag-neuro">Cognitive Neuroscience</span>
+              <span class="tag tag-hci">Human-Computer Interaction</span>
               <span class="tbadge tb-poster">Poster</span>
               <span class="tb-first">★ First author</span>
               <span class="accept-rate">ANFA 2020 · Virtual</span>
@@ -365,7 +375,7 @@ a:hover{text-decoration:underline}
             <div class="pr-title">Social Values Modulate Neural Correlates of Moral Decision Making</div>
             <div class="pr-authors"><strong>Lin, Y.C.</strong>, Doole, R., Huang, H. W., & Huang, C. M.</div>
             <div class="pr-meta">
-              <span class="tag tag-neuro">Neuroimaging</span>
+              <span class="tag tag-neuro">Cognitive Neuroscience</span>
               <span class="tbadge tb-poster">Poster</span>
               <span class="tb-first">★ First author</span>
               <span class="accept-rate">CNS 2019 · San Francisco</span>
@@ -379,7 +389,7 @@ a:hover{text-decoration:underline}
             <div class="pr-title">Cross-Cultural Social Values Modulate Neural Correlates of Moral Decision-Making</div>
             <div class="pr-authors"><strong>Lin, Y.C.</strong>, Li, Y. S., Huang, H. W., Fan, Y. T., Doole, R., Wu C. W., Tzeng, O. J. L., Cheng, Y., & Huang, C. M.</div>
             <div class="pr-meta">
-              <span class="tag tag-neuro">Neuroimaging</span>
+              <span class="tag tag-neuro">Cognitive Neuroscience</span>
               <span class="tbadge" style="background:rgba(212,146,74,0.1);color:var(--acc);border:0.5px solid rgba(212,146,74,0.2)">Under Review</span>
               <span class="tb-first">★ First author</span>
             </div>
