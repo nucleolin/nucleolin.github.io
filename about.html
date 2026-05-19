@@ -91,6 +91,13 @@ a:hover{text-decoration:underline}
 .bio-greeting{font-size:12px;color:var(--fg2);margin-top:6px}
 .bio-seeking{margin-top:16px;font-size:12px;padding:10px 14px;border-radius:6px;background:rgba(212,146,74,0.1);border:0.5px solid rgba(212,146,74,0.3);color:var(--fg);line-height:1.6}
 .bio-seeking strong{color:var(--acc)}
+.collab-list{display:flex;flex-direction:column;gap:0}
+.collab-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:0.5px solid var(--bdr)}
+.collab-item:last-child{border-bottom:none}
+.collab-tag{font-size:9px;font-weight:600;letter-spacing:.06em;padding:2px 8px;border-radius:3px;background:var(--bg3);color:var(--fg2);white-space:nowrap;flex-shrink:0;margin-top:2px}
+.collab-body{}
+.collab-title{font-size:12px;font-weight:500;color:var(--fg);line-height:1.5}
+.collab-sub{font-size:11px;color:var(--fg2);margin-top:2px}
 .trow{display:flex;gap:16px;padding:12px 0;border-bottom:0.5px solid var(--bdr)}
 .trow:last-child{border-bottom:none}
 .tr-period{font-size:11px;color:var(--fg2);min-width:104px;padding-top:1px;flex-shrink:0}
@@ -215,7 +222,7 @@ a:hover{text-decoration:underline}
         </div>
       </div>
       <div class="bio">
-        <p>Hi, I'm <strong>YC</strong>, a graduate student (started from 02/2025) from Taiwan at National Tsing Hua University (NTHU), where I work with <strong>Dr. Po-Chih Kuo</strong> in <a href="https://nthu-cs-hmilab.github.io/#" target="_blank" rel="noopener">HMI Lab</a> within the Department of Computer Science.</p>
+        <p>Hi, I'm <strong>YC</strong>, a graduate student (started from 02/2025) from Taiwan at National Tsing Hua University (NTHU), where I work with <strong><a href="https://scholar.google.com/citations?user=ganmD58AAAAJ&hl=en" target="_blank" rel="noopener">Dr. Po-Chih Kuo</a></strong> in <a href="https://nthu-cs-hmilab.github.io/#" target="_blank" rel="noopener">HMI Lab</a> within the Department of Computer Science.</p>
 
         <p>My <em>research</em> explores the spatial, social, and design cognition of humans and AI in built environments and social landscapes. Grounded in everyday, real-world experiences, my work draws on approaches from <strong><em>human-computer interaction</em> (HCI)</strong> and <a href="https://www.nature.com/articles/s41593-018-0210-5" target="_blank" rel="noopener"><em>cognitive computational neuroscience</em></a> (cognitive science/psychology + neuroimaging + machine learning/deep learning).</p>
 
@@ -235,6 +242,55 @@ a:hover{text-decoration:underline}
 
         <div class="bio-seeking">
           <strong>Seeking Summer 2026 visiting student or research internship opportunities & 2027 Fall Ph.D Position!</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPEN TO COLLABORATE -->
+    <div class="ps fi" id="collaborate">
+      <div class="sh"><h2 class="st">Open to Collaborate</h2></div>
+      <div class="collab-list">
+        <div class="collab-item">
+          <span class="collab-tag">Design × AI</span>
+          <div class="collab-body">
+            <div class="collab-title">Human-informed Architectural Design Tool</div>
+            <div class="collab-sub">Dataset curation + tool development</div>
+          </div>
+        </div>
+        <div class="collab-item">
+          <span class="collab-tag">Music × Tech</span>
+          <div class="collab-body">
+            <div class="collab-title">Live Jazz — MIR or Hardware</div>
+            <div class="collab-sub">Music information retrieval or physical computing angle</div>
+          </div>
+        </div>
+        <div class="collab-item">
+          <span class="collab-tag">Crowdsourcing</span>
+          <div class="collab-body">
+            <div class="collab-title">Thread 競賽串文 — Understanding People via IM</div>
+            <div class="collab-sub">Crowdsourcing / collective sensemaking / IM tool design</div>
+          </div>
+        </div>
+        <div class="collab-item">
+          <span class="collab-tag">HCI × History</span>
+          <div class="collab-body">
+            <div class="collab-title">HCI 臺灣史 — Open-source Database</div>
+            <div class="collab-sub">Archiving the history of HCI research and practice in Taiwan</div>
+          </div>
+        </div>
+        <div class="collab-item">
+          <span class="collab-tag">NeuroAI</span>
+          <div class="collab-body">
+            <div class="collab-title">Sociocultural Differences of VLMs in Moral Evaluation</div>
+            <div class="collab-sub">Cross-cultural alignment benchmarking of vision-language models</div>
+          </div>
+        </div>
+        <div class="collab-item">
+          <span class="collab-tag">Soc. Computing</span>
+          <div class="collab-body">
+            <div class="collab-title">Social Issue — Large-Scale Behavioral Study</div>
+            <div class="collab-sub">Computational methods for studying social issue engagement at scale</div>
+          </div>
         </div>
       </div>
     </div>
