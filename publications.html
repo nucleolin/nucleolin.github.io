@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Publications · Yang Chen Lin</title>
+<title>Research · Yang Chen Lin</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KX3ZB52DC6"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KX3ZB52DC6');</script>
 <style>
@@ -100,6 +100,19 @@ a:hover{text-decoration:underline}
 .pr-desc{font-size:11px;color:var(--fg3);line-height:1.6;font-style:italic}
 .no-results{text-align:center;padding:60px 0;color:var(--fg3);font-size:13px}
 .accept-rate{font-size:9px;color:var(--fg3);padding:2px 6px;border-radius:3px;background:rgba(255,255,255,0.04);border:0.5px solid var(--bdr)}
+.rs-statement{font-size:13px;color:var(--fg2);line-height:1.85;margin-bottom:36px}
+.rs-statement strong{color:var(--fg)}
+.rs-themes{margin-bottom:12px}
+.rs-themes-label{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--fg3);margin-bottom:14px}
+.rst-card{display:flex;gap:18px;padding:14px 0;border-bottom:0.5px solid var(--bdr)}
+.rst-card:last-child{border-bottom:none}
+.rst-num{font-size:11px;font-weight:600;color:var(--acc);min-width:18px;padding-top:2px;flex-shrink:0;font-style:italic}
+.rst-title{font-size:13px;font-weight:600;color:var(--fg);margin-bottom:5px}
+.rst-desc{font-size:12px;color:var(--fg2);line-height:1.7;margin-bottom:5px}
+.rst-work{font-size:11px;color:var(--fg3);font-style:italic}
+.rs-vision{margin:32px 0 40px;text-align:center}
+.rs-vision img{max-width:100%;border-radius:8px;opacity:.92}
+.rs-pub-label{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--fg3);padding-bottom:10px;border-bottom:0.5px solid var(--bdr);margin-bottom:20px;display:flex;align-items:center;justify-content:space-between}
 
 /* ── Mobile responsive ── */
 .hamburger{display:none;flex-direction:column;justify-content:center;gap:4px;background:none;border:none;cursor:pointer;padding:10px 14px;flex-shrink:0}
@@ -133,8 +146,7 @@ a:hover{text-decoration:underline}
   <div class="sb-nav">
     <div class="ng">Pages</div>
     <a class="na" href="about.html">About</a>
-    <!-- <a class="na" href="research.html">Research</a> -->
-    <a class="na cur" href="publications.html">Publications</a>
+    <a class="na cur" href="publications.html">Research</a>
     <a class="na" href="news.html">Logs</a>
     <!-- <a class="na" href="blog.html">Blog</a> -->
   </div>
@@ -156,11 +168,56 @@ a:hover{text-decoration:underline}
 
 <main class="main">
   <div class="ptbar">
-    <div><div class="pt-ey">Journal · Conference · Poster · Work in Progress</div><h1 class="pt-h">Publications</h1></div>
-    <div class="pub-count">Showing <span id="shown">12</span> of 12</div>
+    <h1 class="pt-h">Research</h1>
   </div>
 
   <div class="page fi">
+
+    <!-- RESEARCH STATEMENT -->
+    <div class="rs-statement">
+      My research sits at the intersection of <strong>cognitive neuroscience, HCI, and AI</strong> — investigating how human minds represent and navigate space and social landscapes, and building computational tools that bring this understanding into the design of AI systems and environments. Across three research threads, I ask a common question: what changes when AI systems are actually grounded in how humans experience the world?
+    </div>
+
+    <!-- RESEARCH THEMES -->
+    <div class="rs-themes">
+      <div class="rs-themes-label">Research Themes</div>
+      <div class="rst-card">
+        <div class="rst-num">I</div>
+        <div class="rst-body">
+          <div class="rst-title">Cognitive-Computational Design</div>
+          <div class="rst-desc">How do people experience built space — and how can AI tools actually know? I integrate human experience data (fMRI, eye-tracking, behavioral signals) into AI-assisted architectural and interior design workflows, enabling designers and AI to collaboratively shape environments grounded in how people feel in them.</div>
+          <div class="rst-work">Key work: AIDED (CHI '26)</div>
+        </div>
+      </div>
+      <div class="rst-card">
+        <div class="rst-num">II</div>
+        <div class="rst-body">
+          <div class="rst-title">Psychological Distance & Conversational AI</div>
+          <div class="rst-desc">People don't think about social issues in the abstract — they mentally locate themselves relative to them. I study the cognitive and neural mechanisms of this psychological distancing, and examine how conversational AI both measures and actively reshapes it at scale.</div>
+          <div class="rst-work">Key work: Fit Matters (CHI '26), CHI '25, cross-cultural fMRI (under review)</div>
+        </div>
+      </div>
+      <div class="rst-card">
+        <div class="rst-num">III</div>
+        <div class="rst-body">
+          <div class="rst-title">NeuroAI</div>
+          <div class="rst-desc">What can neuroscience teach us about building better learning systems? I pursue this through shortcut learning, biologically plausible error propagation, hippocampal cognitive map formation, and cerebellar-inspired self-supervised learning.</div>
+          <div class="rst-work">Key work: AAAI NeuroAI Workshop '26</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESEARCH VISION -->
+    <div class="rs-vision">
+      <img src="photo.png" alt="Research Vision — Yang Chen Lin">
+    </div>
+
+    <!-- PUBLICATIONS -->
+    <div class="rs-pub-label">
+      <span>Publications</span>
+      <span class="pub-count">Showing <span id="shown">12</span> of 12</span>
+    </div>
+
     <div class="filters">
       <div class="filter-row">
         <span class="fl">Type</span>
