@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research · Yang Chen Lin</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KX3ZB52DC6"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KX3ZB52DC6');</script>
+<style>
+:root{
+  --bg:#1a1714;--bg2:#232018;--bg3:#2c2820;
+  --fg:#ede8e0;--fg2:#a89e90;--fg3:#665e52;
+  --acc:#d4924a;--amb:#6aa4c8;--blue:#6aa4c8;--violet:#9d8fe8;
+  --bdr:rgba(255,255,255,0.08);--bdr2:rgba(255,255,255,0.14);
+}
+[data-theme="light"]{
+  --bg:#f5f2ec;--bg2:#fdfbf7;--bg3:#ede9e0;
+  --fg:#1c1814;--fg2:#5a5048;--fg3:#9a9088;
+  --acc:#a0640a;--amb:#2a6a94;--blue:#2a6a94;--violet:#5a4ab0;
+  --bdr:rgba(0,0,0,0.07);--bdr2:rgba(0,0,0,0.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--fg);font-size:14px;line-height:1.65;transition:background .25s,color .25s}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+.layout{display:flex;min-height:100vh}
+.sidebar{width:200px;min-width:200px;background:var(--bg2);border-right:0.5px solid var(--bdr);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto}
+.sb-logo{padding:22px 18px 18px;border-bottom:0.5px solid var(--bdr)}
+.sn{font-size:13px;font-weight:600;color:var(--fg)}.sr{font-size:10px;color:var(--fg3);margin-top:2px}
+.sb-nav{padding:14px 0;flex:1}
+.ng{padding:12px 18px 4px;font-size:9px;color:var(--fg3);letter-spacing:.1em;text-transform:uppercase}
+.na{display:block;padding:6px 18px;font-size:12px;color:var(--fg2);border-left:2px solid transparent;transition:all .15s;text-decoration:none}
+.na:hover{color:var(--fg);background:rgba(212,146,74,0.04);text-decoration:none}
+.na.cur{color:var(--acc);border-left-color:var(--acc);background:rgba(212,146,74,0.07);font-weight:500}
+.sb-foot{padding:14px 18px;border-top:0.5px solid var(--bdr);display:flex;flex-direction:column;gap:10px}
+.ttog{background:none;border:0.5px solid var(--bdr2);border-radius:20px;padding:5px 10px;cursor:pointer;display:flex;align-items:center;gap:6px;color:var(--fg3);font-size:11px;transition:border-color .2s}
+.ttog:hover{border-color:var(--acc);color:var(--fg2)}
+.tpill{width:26px;height:14px;background:var(--bg3);border-radius:7px;position:relative}
+.tpill::after{content:'';position:absolute;top:2px;left:2px;width:10px;height:10px;border-radius:50%;background:var(--acc);transition:transform .2s}
+[data-theme="light"] .tpill::after{transform:translateX(12px)}
+.sbadge{font-size:10px;color:var(--acc);display:flex;align-items:center;gap:5px;cursor:pointer;user-select:none;position:relative}
+.sbadge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--acc);flex-shrink:0;animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.opp-popup{display:none;position:absolute;bottom:calc(100% + 8px);left:0;width:216px;background:var(--bg2);border:0.5px solid var(--bdr2);border-radius:10px;padding:14px 16px;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,.35)}
+.opp-popup.open{display:block}
+.opp-popup::after{content:'';position:absolute;bottom:-5px;left:14px;width:8px;height:8px;background:var(--bg2);border-right:0.5px solid var(--bdr2);border-bottom:0.5px solid var(--bdr2);transform:rotate(45deg)}
+.opp-title{font-size:11px;font-weight:600;color:var(--fg);margin-bottom:8px}
+.opp-item{font-size:11px;color:var(--fg2);padding:4px 0;border-bottom:0.5px solid var(--bdr);display:flex;align-items:center;gap:7px;line-height:1.4}
+.opp-item:last-child{border-bottom:none;padding-bottom:0}
+.opp-dot{width:5px;height:5px;border-radius:50%;background:var(--acc);flex-shrink:0}
+.opp-cta{margin-top:10px;display:block;font-size:10px;color:var(--acc);text-align:center;padding:5px;border:0.5px solid rgba(212,146,74,0.3);border-radius:6px;text-decoration:none;transition:background .15s}
+.opp-cta:hover{background:rgba(212,146,74,0.1);text-decoration:none}
+.main{flex:1;min-width:0}
+.ptbar{padding:18px 32px;border-bottom:0.5px solid var(--bdr);background:var(--bg2)}
+.pt-h{font-size:22px;font-weight:600;color:var(--fg)}
+.page{padding:32px;max-width:800px}
+.fi{opacity:0;transform:translateY(12px);transition:opacity .5s,transform .5s}
+.fi.vis{opacity:1;transform:translateY(0)}
+.rs-statement{font-size:13px;color:var(--fg);line-height:1.85;margin-bottom:36px}
+.rs-statement strong{color:var(--fg)}
+.rs-themes{margin-bottom:12px}
+.rs-themes-label{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--fg3);margin-bottom:14px}
+.rst-card{display:flex;gap:18px;padding:14px 0;border-bottom:0.5px solid var(--bdr)}
+.rst-card:last-child{border-bottom:none}
+.rst-num{font-size:11px;font-weight:600;color:var(--acc);min-width:18px;padding-top:2px;flex-shrink:0;font-style:italic}
+.rst-title{font-size:13px;font-weight:600;color:var(--fg);margin-bottom:5px}
+.rst-desc{font-size:12px;color:var(--fg2);line-height:1.7;margin-bottom:5px}
+.rst-work{font-size:11px;color:var(--fg2);font-style:italic}
+.rs-vision{margin:32px 0 0;text-align:center}
+.rs-vision img{max-width:100%;border-radius:8px;opacity:.92}
+/* ── Mobile responsive ── */
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:4px;background:none;border:none;cursor:pointer;padding:10px 14px;flex-shrink:0}
+.hamburger span{display:block;width:18px;height:1.5px;background:var(--fg2);border-radius:2px;transition:all .2s}
+@media(max-width:720px){
+  .layout{flex-direction:column}
+  .sidebar{width:100%;min-width:unset;height:auto;position:relative;flex-direction:row;align-items:center;border-right:none;border-bottom:0.5px solid var(--bdr)}
+  .sb-logo{border-bottom:none;padding:12px 16px;flex:1}
+  .sb-nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg2);border-bottom:0.5px solid var(--bdr);padding:6px 0;z-index:20;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+  .sb-nav.open{display:block}
+  .sb-foot{display:none}
+  .hamburger{display:flex}
+  .page{padding:20px 16px}
+  .ptbar{padding:14px 16px}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="sidebar">
+  <div class="sb-logo"><div class="sn">Yang Chen Lin</div><div class="sr">HCI · Neuro · AI</div></div>
+  <button class="hamburger" onclick="document.querySelector('.sb-nav').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="sb-nav">
+    <div class="ng">Pages</div>
+    <a class="na" href="about.html">About</a>
+    <a class="na cur" href="research.html">Research</a>
+    <a class="na" href="publications.html">Publications</a>
+    <a class="na" href="news.html">Logs</a>
+  </div>
+  <div class="sb-foot">
+    <button class="ttog" onclick="toggleTheme()"><span id="tlbl" style="font-size:11px;color:var(--fg3)">Light Mode</span><span class="tpill"></span></button>
+    <div class="sbadge" onclick="toggleOpp(event)" role="button" tabindex="0">
+      <div class="opp-popup" id="opp-popup">
+        <div class="opp-title">Open to opportunities</div>
+        <div class="opp-item"><span class="opp-dot"></span>Direct-entry PhD (Sep. 2026)</div>
+        <div class="opp-item"><span class="opp-dot"></span>Research internship / RA</div>
+        <div class="opp-item"><span class="opp-dot"></span>Research collaboration</div>
+        <div class="opp-item"><span class="opp-dot"></span>Talk / seminar invitation</div>
+        <a class="opp-cta" href="mailto:yangchenlin@gapp.nthu.edu.tw">Get in touch →</a>
+      </div>
+      Open to opportunities
+    </div>
+  </div>
+</nav>
+
+<main class="main">
+  <div class="ptbar">
+    <h1 class="pt-h">Research</h1>
+  </div>
+
+  <div class="page fi">
+
+    <div class="rs-statement">
+      My research sits at the intersection of <strong>cognitive neuroscience, HCI, and AI</strong> — investigating how human minds represent and navigate space and social landscapes, and building computational tools that bring this understanding into the design of AI systems and environments. Across three research threads, I ask a common question: what changes when AI systems are actually grounded in how humans experience the world?
+    </div>
+
+    <div class="rs-themes">
+      <div class="rs-themes-label">Research Themes</div>
+      <div class="rst-card">
+        <div class="rst-num">I</div>
+        <div class="rst-body">
+          <div class="rst-title">Cognitive-Computational Design</div>
+          <div class="rst-desc">How do people experience built space — and how can AI tools actually know? I integrate human experience data (fMRI, eye-tracking, behavioral signals) into AI-assisted architectural and interior design workflows, enabling designers and AI to collaboratively shape environments grounded in how people feel in them.</div>
+          <div class="rst-work">Key work: AIDED (CHI '26)</div>
+        </div>
+      </div>
+      <div class="rst-card">
+        <div class="rst-num">II</div>
+        <div class="rst-body">
+          <div class="rst-title">Psychological Distance & Conversational AI</div>
+          <div class="rst-desc">People don't think about social issues in the abstract — they mentally locate themselves relative to them. I study the cognitive and neural mechanisms of this psychological distancing, and examine how conversational AI both measures and actively reshapes it at scale.</div>
+          <div class="rst-work">Key work: Fit Matters (CHI '26), CHI '25, cross-cultural fMRI (under review)</div>
+        </div>
+      </div>
+      <div class="rst-card">
+        <div class="rst-num">III</div>
+        <div class="rst-body">
+          <div class="rst-title">NeuroAI</div>
+          <div class="rst-desc">What can neuroscience teach us about building better learning systems? I pursue this through shortcut learning, biologically plausible error propagation, hippocampal cognitive map formation, and cerebellar-inspired self-supervised learning.</div>
+          <div class="rst-work">Key work: AAAI NeuroAI Workshop '26</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rs-vision">
+      <img src="photo.png" alt="Research Vision — Yang Chen Lin">
+    </div>
+
+  </div>
+</main>
+</div>
+<script>
+function toggleOpp(e){e.stopPropagation();const p=document.getElementById('opp-popup');if(p)p.classList.toggle('open');}
+document.addEventListener('click',function(){const p=document.getElementById('opp-popup');if(p)p.classList.remove('open');});
+(function(){const s=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',s);const l=document.getElementById('tlbl');if(l)l.textContent=s==='light'?'Dark Mode':'Light Mode';})();
+function toggleTheme(){const c=document.documentElement.getAttribute('data-theme'),n=c==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('theme',n);document.getElementById('tlbl').textContent=n==='light'?'Dark Mode':'Light Mode';}
+const fo=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');fo.unobserve(x.target);}});},{threshold:0.05});
+document.querySelectorAll('.fi').forEach(el=>fo.observe(el));
+</script>
+</body>
+</html>
