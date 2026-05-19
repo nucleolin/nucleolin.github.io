@@ -27,9 +27,8 @@ a{color:var(--acc);text-decoration:none}
 a:hover{text-decoration:underline}
 .layout{display:flex;min-height:100vh}
 .sidebar{width:200px;min-width:200px;background:var(--bg2);border-right:0.5px solid var(--bdr);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto}
-.sb-logo{padding:22px 18px 18px;border-bottom:0.5px solid var(--bdr)}
-.sn{font-size:13px;font-weight:600;color:var(--fg)}
-.sr{font-size:10px;color:var(--fg3);margin-top:2px}
+.sb-logo{padding:20px 18px 16px;border-bottom:0.5px solid var(--bdr)}
+.sn{font-size:16px;font-weight:600;color:var(--fg)}
 .sb-nav{padding:14px 0;flex:1}
 .ng{padding:12px 18px 4px;font-size:9px;color:var(--fg3);letter-spacing:.1em;text-transform:uppercase}
 .na{display:block;padding:6px 18px;font-size:12px;color:var(--fg2);border-left:2px solid transparent;transition:all .15s;text-decoration:none}
@@ -170,7 +169,7 @@ a:hover{text-decoration:underline}
 <body>
 <div class="layout">
 <nav class="sidebar">
-  <div class="sb-logo"><div class="sn">Yang Chen Lin</div><div class="sr">HCI · Neuro · AI</div></div>
+  <div class="sb-logo"><div class="sn">About</div></div>
       <button class="hamburger" onclick="document.querySelector('.sb-nav').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
   <div class="sb-nav">
     <div class="ng">Pages</div>
@@ -187,9 +186,6 @@ a:hover{text-decoration:underline}
 </nav>
 
 <main class="main">
-  <div class="ptbar">
-    <h1 class="pt-h">About</h1>
-  </div>
   <div class="content-wrap">
   <div class="page">
 
