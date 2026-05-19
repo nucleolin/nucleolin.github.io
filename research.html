@@ -62,7 +62,8 @@ a:hover{text-decoration:underline}
 .rs-statement{font-size:13px;color:var(--fg);line-height:1.85;margin-bottom:36px}
 .rs-statement strong{color:var(--fg)}
 .rs-themes{margin-bottom:12px}
-.rs-themes-label{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--fg3);margin-bottom:14px}
+.rs-themes-label{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--fg3);margin-bottom:14px;display:flex;align-items:center;justify-content:space-between}
+.rs-themes-label .rs-sub{font-size:10px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--acc);opacity:.8}
 .rst-card{display:flex;gap:18px;padding:14px 0;border-bottom:0.5px solid var(--bdr)}
 .rst-card:last-child{border-bottom:none}
 .rst-num{font-size:11px;font-weight:600;color:var(--acc);min-width:18px;padding-top:2px;flex-shrink:0;font-style:italic}
@@ -144,7 +145,7 @@ a:hover{text-decoration:underline}
     </div>
 
     <div class="rs-themes" style="margin-top:32px">
-      <div class="rs-themes-label">Open to Collaborate</div>
+      <div class="rs-themes-label">Work in Progress<span class="rs-sub">→ Open to Collaborate</span></div>
       <ul class="rs-collab-list">
         <li>Human-informed Architectural Design Tool — dataset + tool development</li>
         <li>Live Jazz — MIR or hardware</li>
