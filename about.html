@@ -41,8 +41,8 @@ a:hover{text-decoration:underline}
 .tpill{width:26px;height:14px;background:var(--bg3);border-radius:7px;position:relative}
 .tpill::after{content:'';position:absolute;top:2px;left:2px;width:10px;height:10px;border-radius:50%;background:var(--acc);transition:transform .2s}
 [data-theme="light"] .tpill::after{transform:translateX(12px)}
-.sbadge{font-size:10px;color:var(--acc);display:flex;align-items:center;gap:5px;cursor:pointer;user-select:none;position:relative}
-.sbadge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--acc);flex-shrink:0;animation:pulse 2.4s ease-in-out infinite}
+.sb-mail{font-size:10px;color:var(--acc);text-decoration:none;transition:opacity .15s}
+.sb-mail:hover{opacity:.72;text-decoration:none}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 .opp-popup{display:none;position:absolute;bottom:calc(100% + 8px);left:0;width:216px;background:var(--bg2);border:0.5px solid var(--bdr2);border-radius:10px;padding:14px 16px;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,.35)}
 .opp-popup.open{display:block}
@@ -182,17 +182,7 @@ a:hover{text-decoration:underline}
   </div>
   <div class="sb-foot">
     <button class="ttog" onclick="toggleTheme()"><span id="tlbl" style="font-size:11px;color:var(--fg3)">Light Mode</span><span class="tpill"></span></button>
-    <div class="sbadge" onclick="toggleOpp(event)" role="button" tabindex="0">
-      <div class="opp-popup" id="opp-popup">
-        <div class="opp-title">Open to opportunities</div>
-        <div class="opp-item"><span class="opp-dot"></span>Direct-entry PhD (Sep. 2026)</div>
-        <div class="opp-item"><span class="opp-dot"></span>Research internship / RA</div>
-        <div class="opp-item"><span class="opp-dot"></span>Research collaboration</div>
-        <div class="opp-item"><span class="opp-dot"></span>Talk / seminar invitation</div>
-        <a class="opp-cta" href="mailto:yangchenlin@gapp.nthu.edu.tw">Get in touch →</a>
-      </div>
-      Open to opportunities
-    </div>
+    <a class="sb-mail" href="mailto:yangchenlin@gapp.nthu.edu.tw">Get in touch →</a>
   </div>
 </nav>
 
@@ -206,9 +196,9 @@ a:hover{text-decoration:underline}
     <!-- HERO -->
     <div class="fi" style="margin-bottom:44px">
       <div class="hero">
-        <div class="photo-box"><span>YC</span></div>
+        <div class="photo-box"><img src="photo-profile.PNG" alt="Yang Chen Lin"></div>
         <div class="hero-text">
-          <div class="hn"><span class="name-hover">Yang Chen Lin<span class="name-tooltip"><span class="nt-placeholder">YC</span></span></span><span class="hz">林泱辰</span></div>
+          <div class="hn"><span class="name-hover">Yang Chen Lin<span class="name-tooltip"><img src="photo-hover.jpg" alt="Yang Chen Lin"></span></span><span class="hz">林泱辰</span></div>
           <div class="hero-links">
             <a class="hl" href="CV_YangChenLin.html" target="_blank" rel="noopener">CV Web</a>
             <a class="hl" href="https://www.dropbox.com/scl/fi/z1wr7trj7dbfduecg17ud/20260515_YangChenLin_CV.pdf?rlkey=me3r2sbefyaquur5xspdbsfo6&dl=0" target="_blank" rel="noopener">CV PDF</a>
@@ -240,58 +230,6 @@ a:hover{text-decoration:underline}
 
         <p class="bio-greeting">Nice to meet you all! Feel free to reach out! ✉️ <em>I'm always open to deeper conversations and connections — whether to discuss ideas 💬 or explore possible collaborations 🤝</em></p>
 
-        <div class="bio-seeking">
-          <strong>Seeking Summer 2026 visiting student or research internship opportunities & 2027 Fall Ph.D Position!</strong>
-        </div>
-      </div>
-    </div>
-
-    <!-- OPEN TO COLLABORATE -->
-    <div class="ps fi" id="collaborate">
-      <div class="sh"><h2 class="st">Open to Collaborate</h2></div>
-      <div class="collab-list">
-        <div class="collab-item">
-          <span class="collab-tag">Design × AI</span>
-          <div class="collab-body">
-            <div class="collab-title">Human-informed Architectural Design Tool</div>
-            <div class="collab-sub">Dataset curation + tool development</div>
-          </div>
-        </div>
-        <div class="collab-item">
-          <span class="collab-tag">Music × Tech</span>
-          <div class="collab-body">
-            <div class="collab-title">Live Jazz — MIR or Hardware</div>
-            <div class="collab-sub">Music information retrieval or physical computing angle</div>
-          </div>
-        </div>
-        <div class="collab-item">
-          <span class="collab-tag">Crowdsourcing</span>
-          <div class="collab-body">
-            <div class="collab-title">Thread 競賽串文 — Understanding People via IM</div>
-            <div class="collab-sub">Crowdsourcing / collective sensemaking / IM tool design</div>
-          </div>
-        </div>
-        <div class="collab-item">
-          <span class="collab-tag">HCI × History</span>
-          <div class="collab-body">
-            <div class="collab-title">HCI 臺灣史 — Open-source Database</div>
-            <div class="collab-sub">Archiving the history of HCI research and practice in Taiwan</div>
-          </div>
-        </div>
-        <div class="collab-item">
-          <span class="collab-tag">NeuroAI</span>
-          <div class="collab-body">
-            <div class="collab-title">Sociocultural Differences of VLMs in Moral Evaluation</div>
-            <div class="collab-sub">Cross-cultural alignment benchmarking of vision-language models</div>
-          </div>
-        </div>
-        <div class="collab-item">
-          <span class="collab-tag">Soc. Computing</span>
-          <div class="collab-body">
-            <div class="collab-title">Social Issue — Large-Scale Behavioral Study</div>
-            <div class="collab-sub">Computational methods for studying social issue engagement at scale</div>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -377,15 +315,6 @@ a:hover{text-decoration:underline}
       <div class="op-label">learning</div>
       <ul class="op-list">
         <li>LLM quantization</li>
-      </ul>
-    </div>
-
-    <div class="op-section">
-      <div class="op-label">looking for</div>
-      <ul class="op-list">
-        <li>Summer/Winter 2026 internship</li>
-        <li>2027 Fall PhD position</li>
-        <li>Research collaborators</li>
       </ul>
     </div>
 

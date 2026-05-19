@@ -39,9 +39,11 @@ a:hover{text-decoration:underline}
 .tpill{width:26px;height:14px;background:var(--bg3);border-radius:7px;position:relative}
 .tpill::after{content:'';position:absolute;top:2px;left:2px;width:10px;height:10px;border-radius:50%;background:var(--acc);transition:transform .2s}
 [data-theme="light"] .tpill::after{transform:translateX(12px)}
-.sbadge{font-size:10px;color:var(--acc);display:flex;align-items:center;gap:5px;cursor:pointer;user-select:none;position:relative}
-.sbadge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--acc);flex-shrink:0;animation:pulse 2.4s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.sb-mail{font-size:10px;color:var(--acc);text-decoration:none;transition:opacity .15s}
+.sb-mail:hover{opacity:.72;text-decoration:none}
+.rs-collab-list{list-style:none;display:flex;flex-direction:column;gap:0;margin-top:12px}
+.rs-collab-list li{font-size:12px;color:var(--fg2);padding:8px 0;border-bottom:0.5px solid var(--bdr);line-height:1.5}
+.rs-collab-list li:last-child{border-bottom:none}
 .opp-popup{display:none;position:absolute;bottom:calc(100% + 8px);left:0;width:216px;background:var(--bg2);border:0.5px solid var(--bdr2);border-radius:10px;padding:14px 16px;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,.35)}
 .opp-popup.open{display:block}
 .opp-popup::after{content:'';position:absolute;bottom:-5px;left:14px;width:8px;height:8px;background:var(--bg2);border-right:0.5px solid var(--bdr2);border-bottom:0.5px solid var(--bdr2);transform:rotate(45deg)}
@@ -99,17 +101,7 @@ a:hover{text-decoration:underline}
   </div>
   <div class="sb-foot">
     <button class="ttog" onclick="toggleTheme()"><span id="tlbl" style="font-size:11px;color:var(--fg3)">Light Mode</span><span class="tpill"></span></button>
-    <div class="sbadge" onclick="toggleOpp(event)" role="button" tabindex="0">
-      <div class="opp-popup" id="opp-popup">
-        <div class="opp-title">Open to opportunities</div>
-        <div class="opp-item"><span class="opp-dot"></span>Direct-entry PhD (Sep. 2026)</div>
-        <div class="opp-item"><span class="opp-dot"></span>Research internship / RA</div>
-        <div class="opp-item"><span class="opp-dot"></span>Research collaboration</div>
-        <div class="opp-item"><span class="opp-dot"></span>Talk / seminar invitation</div>
-        <a class="opp-cta" href="mailto:yangchenlin@gapp.nthu.edu.tw">Get in touch →</a>
-      </div>
-      Open to opportunities
-    </div>
+    <a class="sb-mail" href="mailto:yangchenlin@gapp.nthu.edu.tw">Get in touch →</a>
   </div>
 </nav>
 
@@ -121,7 +113,13 @@ a:hover{text-decoration:underline}
   <div class="page fi">
 
     <div class="rs-statement">
-      My research sits at the intersection of <strong>cognitive neuroscience, HCI, and AI</strong> — investigating how human minds represent and navigate space and social landscapes, and building computational tools that bring this understanding into the design of AI systems and environments. Across three research threads, I ask a common question: what changes when AI systems are actually grounded in how humans experience the world?
+      My research explores the spatial, social, and design cognition of humans and AI in built environments and social landscapes. Grounded in everyday, real-world experiences, my work draws on approaches from <strong>human-computer interaction (HCI)</strong> and <strong>cognitive computational neuroscience</strong> (cognitive science/psychology + neuroimaging + machine learning/deep learning).<br><br>
+      With a long-term commitment to human well-being, my research advances two intertwined directions. First, I develop <strong>evidence-based computational design tools</strong> — integrating human experience data (neuroimaging, eye-tracking, and self-report) into AI-assisted workflows — to empower humans and AI to collaboratively shape architectural experiences throughout the design process. Second, I examine how individuals represent and navigate their relationships with social issues — exploring the <strong>psychological and neural mechanisms of distance</strong> — and how conversational AI measures and reshapes these dynamics at scale.<br><br>
+      In parallel, I pursue fundamental questions in ML/DL through a <strong>NeuroAI (brain-inspired / informed)</strong> lens, addressing shortcut learning, biologically plausible propagation mechanisms, cognitive map formation in the hippocampus, and self-supervised learning grounded in cerebellar computation.
+    </div>
+
+    <div class="rs-vision">
+      <img src="photo.png" alt="Research Vision — Yang Chen Lin">
     </div>
 
     <div class="rs-themes">
@@ -130,30 +128,35 @@ a:hover{text-decoration:underline}
         <div class="rst-num">I</div>
         <div class="rst-body">
           <div class="rst-title">Cognitive-Computational Design</div>
-          <div class="rst-desc">How do people experience built space — and how can AI tools actually know? I integrate human experience data (fMRI, eye-tracking, behavioral signals) into AI-assisted architectural and interior design workflows, enabling designers and AI to collaboratively shape environments grounded in how people feel in them.</div>
-          <div class="rst-work">Key work: AIDED (CHI '26)</div>
+          <div class="rst-work"><em>editing</em></div>
         </div>
       </div>
       <div class="rst-card">
         <div class="rst-num">II</div>
         <div class="rst-body">
           <div class="rst-title">Psychological Distance & Conversational AI</div>
-          <div class="rst-desc">People don't think about social issues in the abstract — they mentally locate themselves relative to them. I study the cognitive and neural mechanisms of this psychological distancing, and examine how conversational AI both measures and actively reshapes it at scale.</div>
-          <div class="rst-work">Key work: Fit Matters (CHI '26), CHI '25, cross-cultural fMRI (under review)</div>
+          <div class="rst-work"><em>editing</em></div>
         </div>
       </div>
       <div class="rst-card">
         <div class="rst-num">III</div>
         <div class="rst-body">
           <div class="rst-title">NeuroAI</div>
-          <div class="rst-desc">What can neuroscience teach us about building better learning systems? I pursue this through shortcut learning, biologically plausible error propagation, hippocampal cognitive map formation, and cerebellar-inspired self-supervised learning.</div>
-          <div class="rst-work">Key work: AAAI NeuroAI Workshop '26</div>
+          <div class="rst-work"><em>editing</em></div>
         </div>
       </div>
     </div>
 
-    <div class="rs-vision">
-      <img src="photo.png" alt="Research Vision — Yang Chen Lin">
+    <div class="rs-themes" style="margin-top:32px">
+      <div class="rs-themes-label">Open to Collaborate</div>
+      <ul class="rs-collab-list">
+        <li>Human-informed Architectural Design Tool — dataset + tool development</li>
+        <li>Live Jazz — MIR or hardware</li>
+        <li>Thread 競賽串文 — crowdsourcing / understanding people / IM tool</li>
+        <li>HCI 臺灣史 — open-source database</li>
+        <li>Sociocultural differences of VLMs in moral evaluation</li>
+        <li>Social Issue — large-scale behavioral study</li>
+      </ul>
     </div>
 
   </div>

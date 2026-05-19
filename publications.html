@@ -39,8 +39,8 @@ a:hover{text-decoration:underline}
 .tpill{width:26px;height:14px;background:var(--bg3);border-radius:7px;position:relative}
 .tpill::after{content:'';position:absolute;top:2px;left:2px;width:10px;height:10px;border-radius:50%;background:var(--acc);transition:transform .2s}
 [data-theme="light"] .tpill::after{transform:translateX(12px)}
-.sbadge{font-size:10px;color:var(--acc);display:flex;align-items:center;gap:5px;cursor:pointer;user-select:none;position:relative}
-.sbadge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--acc);flex-shrink:0;animation:pulse 2.4s ease-in-out infinite}
+.sb-mail{font-size:10px;color:var(--acc);text-decoration:none;transition:opacity .15s}
+.sb-mail:hover{opacity:.72;text-decoration:none}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 .opp-popup{display:none;position:absolute;bottom:calc(100% + 8px);left:0;width:216px;background:var(--bg2);border:0.5px solid var(--bdr2);border-radius:10px;padding:14px 16px;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,.35)}
 .opp-popup.open{display:block}
@@ -153,9 +153,7 @@ a:hover{text-decoration:underline}
   </div>
   <div class="sb-foot">
     <button class="ttog" onclick="toggleTheme()"><span id="tlbl" style="font-size:11px;color:var(--fg3)">Light Mode</span><span class="tpill"></span></button>
-    <div class="sbadge" onclick="toggleOpp(event)" role="button" tabindex="0">
-      <div class="opp-popup" id="opp-popup">
-        <div class="opp-title">Open to opportunities</div>
+    <a class="sb-mail" href="mailto:yangchenlin@gapp.nthu.edu.tw">Get in touch →</a>
         <div class="opp-item"><span class="opp-dot"></span>Direct-entry PhD (Sep. 2026)</div>
         <div class="opp-item"><span class="opp-dot"></span>Research internship / RA</div>
         <div class="opp-item"><span class="opp-dot"></span>Research collaboration</div>
@@ -218,7 +216,7 @@ a:hover{text-decoration:underline}
               <a class="pl pl-page pl-ph" href="#" onclick="event.preventDefault()">Project Page</a>
               <a class="pl pl-video pl-ph" href="#" onclick="event.preventDefault()">Demo Video</a>
             </div>
-            <div class="pr-desc">Embeds neuroimaging and eye-tracking data into LLM-assisted workflows, enabling evidence-based human–AI co-creation for architectural interior design.</div>
+            <div class="pr-desc"><em>editing</em></div>
           </div>
         </div>
 
@@ -238,7 +236,7 @@ a:hover{text-decoration:underline}
               <a class="pl pl-page pl-ph" href="#" onclick="event.preventDefault()">Project Page</a>
               <a class="pl pl-video pl-ph" href="#" onclick="event.preventDefault()">Demo Video</a>
             </div>
-            <div class="pr-desc">Matching response abstraction level to users' psychological distance significantly improves satisfaction and trust in conversational search interactions.</div>
+            <div class="pr-desc"><em>editing</em></div>
           </div>
         </div>
 
@@ -258,7 +256,7 @@ a:hover{text-decoration:underline}
               <a class="pl pl-poster pl-ph" href="#" onclick="event.preventDefault()">Poster</a>
               <a class="pl pl-page pl-ph" href="#" onclick="event.preventDefault()">Project Page</a>
             </div>
-            <div class="pr-desc">fMRI-aligned fine-tuning reveals and diagnoses shortcut learning bias in DNNs by comparing human neural encoding patterns with model representations across matched/mismatched stimuli.</div>
+            <div class="pr-desc"><em>editing</em></div>
           </div>
         </div>
       </div>
@@ -283,7 +281,7 @@ a:hover{text-decoration:underline}
               <a class="pl pl-poster pl-ph" href="#" onclick="event.preventDefault()">Poster</a>
               <a class="pl pl-page pl-ph" href="#" onclick="event.preventDefault()">Project Page</a>
             </div>
-            <div class="pr-desc">Formative study identifying design barriers in current AI-assisted architectural tools, proposing an HCI-informed framework for collective human–machine intelligence in the design process.</div>
+            <div class="pr-desc"><em>editing</em></div>
           </div>
         </div>
 
@@ -302,7 +300,7 @@ a:hover{text-decoration:underline}
               <a class="pl pl-talk pl-ph" href="#" onclick="event.preventDefault()">Presentation</a>
               <a class="pl pl-page pl-ph" href="#" onclick="event.preventDefault()">Project Page</a>
             </div>
-            <div class="pr-desc">Construal Level Theory explains user preferences: conversational AI suits psychologically distant (abstract, future-oriented) queries; web search for concrete, immediate needs.</div>
+            <div class="pr-desc"><em>editing</em></div>
           </div>
         </div>
 
@@ -321,7 +319,7 @@ a:hover{text-decoration:underline}
             <div class="pr-links">
               <a class="pl pl-poster pl-ph" href="#" onclick="event.preventDefault()">Poster</a>
             </div>
-            <div class="pr-desc">fMRI reveals distinct functional connectivity attenuation patterns evoked by different residential interior styles in visual and spatial processing networks.</div>
+            <div class="pr-desc"><em>editing</em></div>
           </div>
         </div>
       </div>
@@ -345,7 +343,7 @@ a:hover{text-decoration:underline}
               <a class="pl pl-pdf" href="https://www.sciencedirect.com/science/article/abs/pii/S107158192400140X" target="_blank" rel="noopener">Paper PDF</a>
               <a class="pl pl-page pl-ph" href="#" onclick="event.preventDefault()">Project Page</a>
             </div>
-            <div class="pr-desc">Multi-method evaluation framework for scent-related UX, integrating semantic association networks, psychophysiological measures, and subjective ratings across diverse scent stimuli.</div>
+            <div class="pr-desc"><em>editing</em></div>
           </div>
         </div>
 
@@ -363,7 +361,7 @@ a:hover{text-decoration:underline}
             <div class="pr-links">
               <a class="pl pl-pdf pl-ph" href="#" onclick="event.preventDefault()">Paper PDF</a>
             </div>
-            <div class="pr-desc">EEG-based olfactory decoding combining neural signals with gas sensor data to objectively assess and classify odor perception experiences.</div>
+            <div class="pr-desc"><em>editing</em></div>
           </div>
         </div>
       </div>
@@ -386,7 +384,7 @@ a:hover{text-decoration:underline}
             <div class="pr-links">
               <a class="pl pl-pdf pl-ph" href="#" onclick="event.preventDefault()">Paper PDF</a>
             </div>
-            <div class="pr-desc">BCI-driven olfactory interface that monitors EEG-detected mental states and adjusts ambient fragrance in real-time to support mental state regulation.</div>
+            <div class="pr-desc"><em>editing</em></div>
           </div>
         </div>
 
@@ -404,7 +402,7 @@ a:hover{text-decoration:underline}
             <div class="pr-links">
               <a class="pl pl-poster pl-ph" href="#" onclick="event.preventDefault()">Poster</a>
             </div>
-            <div class="pr-desc">Naturalistic fMRI and ISC analysis mapping how neural response patterns correlate with sign language proficiency across signers and learners.</div>
+            <div class="pr-desc"><em>editing</em></div>
           </div>
         </div>
       </div>
@@ -428,7 +426,7 @@ a:hover{text-decoration:underline}
             <div class="pr-links">
               <a class="pl pl-poster pl-ph" href="#" onclick="event.preventDefault()">Poster</a>
             </div>
-            <div class="pr-desc">Cross-cultural fMRI study revealing how socio-cultural background modulates neural responses to exterior and interior architectural environments.</div>
+            <div class="pr-desc"><em>editing</em></div>
           </div>
         </div>
 
@@ -446,7 +444,7 @@ a:hover{text-decoration:underline}
             <div class="pr-links">
               <a class="pl pl-poster pl-ph" href="#" onclick="event.preventDefault()">Poster</a>
             </div>
-            <div class="pr-desc">fMRI evidence that cultural social values moderate the neural correlates of moral judgment during social decision-making scenarios.</div>
+            <div class="pr-desc"><em>editing</em></div>
           </div>
         </div>
 
@@ -460,7 +458,7 @@ a:hover{text-decoration:underline}
               <span class="tbadge" style="background:rgba(212,146,74,0.1);color:var(--acc);border:0.5px solid rgba(212,146,74,0.2)">Under Review</span>
               <span class="tb-first">★ First author</span>
             </div>
-            <div class="pr-desc">Social values and cultural background jointly modulate neural correlates of moral evaluation, with distinct activation patterns across populations.</div>
+            <div class="pr-desc"><em>editing</em></div>
           </div>
         </div>
       </div>

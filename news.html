@@ -40,8 +40,8 @@ a:hover{text-decoration:underline}
 .tpill{width:26px;height:14px;background:var(--bg3);border-radius:7px;position:relative}
 .tpill::after{content:'';position:absolute;top:2px;left:2px;width:10px;height:10px;border-radius:50%;background:var(--acc);transition:transform .2s}
 [data-theme="light"] .tpill::after{transform:translateX(12px)}
-.sbadge{font-size:10px;color:var(--acc);display:flex;align-items:center;gap:5px;cursor:pointer;user-select:none;position:relative}
-.sbadge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--acc);flex-shrink:0;animation:pulse 2.4s ease-in-out infinite}
+.sb-mail{font-size:10px;color:var(--acc);text-decoration:none;transition:opacity .15s}
+.sb-mail:hover{opacity:.72;text-decoration:none}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 .opp-popup{display:none;position:absolute;bottom:calc(100% + 8px);left:0;width:210px;background:var(--bg2);border:0.5px solid var(--bdr2);border-radius:10px;padding:14px 16px;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,.35)}
 .opp-popup.open{display:block}
@@ -137,9 +137,7 @@ a:hover{text-decoration:underline}
   </div>
   <div class="sb-foot">
     <button class="ttog" onclick="toggleTheme()"><span id="tlbl" style="font-size:11px;color:var(--fg3)">Light Mode</span><span class="tpill"></span></button>
-    <div class="sbadge" onclick="toggleOpp(event)" role="button" tabindex="0">
-      <div class="opp-popup" id="opp-popup">
-        <div class="opp-title">Open to opportunities</div>
+    <a class="sb-mail" href="mailto:yangchenlin@gapp.nthu.edu.tw">Get in touch →</a>
         <div class="opp-item"><span class="opp-dot"></span>Direct-entry PhD (Sep. 2026)</div>
         <div class="opp-item"><span class="opp-dot"></span>Research internship / RA</div>
         <div class="opp-item"><span class="opp-dot"></span>Research collaboration</div>
